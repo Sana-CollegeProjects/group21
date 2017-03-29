@@ -35,6 +35,7 @@ input[type=text]:focus {
     <link rel="stylesheet" href="fruits.html" type="text/css" />
     <link rel="stylesheet" type="text/css" href="css/index.css">
 <body>
+    
     <section>
     <div class="move" >
         
@@ -62,7 +63,7 @@ input[type=text]:focus {
     
 </div>
 <form action="http://www.google.com/search">
-  <input class="bottom" name="search_query" onkeyup="SearchFunction()" maxlength="25" id="myInput" type="text" placeholder="Search.."> 
+  <input class="bottom" name="search_query" onkeyup="ban()" maxlength="25" id="myInput" type="text" placeholder="Search.."> 
    </form>
 <!--  <div class="col-lg-6">-->
 <!--    <div class="input-group">-->
@@ -75,25 +76,22 @@ input[type=text]:focus {
 <!--</div><!-- /.row -->
 <!--</form>-->
 
-<script>
-function SearchFunction() {
-    var input, filter, ul, li, a, i;
-    input = document.getElementById("myInput");
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("myUL");
-    li = ul.getElementsByTagName("li");
-    for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("a")[0];
-        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
-
-        }
-    }
-}
-</script>
+<gcse:searchbox-only resultsUrl="http://jsfiddle.net/devnook/2PC2f/6/show_html/"></gcse:searchbox-only>
 </body>
+<script>
+  (function() {
+    var cx = '017643444788069204610:4gvhea_mvga';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+
 
 </html>
   <!--https://www.w3schools.com/
