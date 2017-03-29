@@ -38,27 +38,25 @@
     -->
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
 
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <link rel="stylesheet" type="text/css" href="css/prod_cat.css" />
+    <link rel="stylesheet" type="text/css" href="my-app/www/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="my-app/www/css/prod_cat.css" />
     <title>Product Categories</title>
 </head>
 
 <body>
     <div class="body">
-         <a href = "vegetables.html"><div class="category" id="veg">
-            <div class="cat_title">Fresh Vegetables</div>
-        </div></a>
-        <a href = "fruits.html">
+        <div class="category" id="veg">
+            <a href = "freshVeg.html"><div class="cat_title">Fresh Vegetables</div></a>
+        </div>
         <div class="category" id="fruit">
-            <div class="cat_title">Fresh Fruits</div>
-        </div></a>
-        <a href = "food_cupboard.html">
-            <div class="category" id="dry">
+            <a href = "productSelect.html"><div class="cat_title">Fresh Fruits</div></a>
+        </div>
+        <div class="category" id="dry">
             <div class="cat_title">Food Cupboard</div>
-        </div></a>
-        <a href = "others.html"><div class="category" id="others">
-            <div class="cat_title">Meat and Dairy</div>
-        </div></a>
+        </div>
+        <div class="category" id="others">
+            <div class="cat_title">Others</div>
+        </div>
     </div>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>

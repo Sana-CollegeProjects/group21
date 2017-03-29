@@ -1,19 +1,23 @@
- .register{
-       background-image: url("http://www.findyourcornwall.co.uk/img/FYC-shopping-food+drink-001.jpg");
-        height: 100%;
+
+
+.register{
+        background-image: url("http://www.findyourcornwall.co.uk/img/FYC-shopping-food+drink-001.jpg");
         width:100%;
+        height:100%;
+        background-repeat; no-repeat;
     
     }
     
     .child{
-     background-color: white;
+  background-color: white;
   position: absolute;
-  width: 400px;
-  height: 400px;
+  width: 60%;
+  height: auto;
   z-index: 15;
   top: 30%;
   left: 50%;
-  margin: -100px 0 0 -150px;
+ /* margin: -100px 0 0 -150px;*/
+ margin:-20% 0 0 -20%;
  
 }
 
@@ -21,9 +25,9 @@
  display: block;
  margin: 0 auto;
   margin-left: auto;
-	width: 170px;
-  height: 120px;
-  margin-top:-60px;
+	width:150px;
+  height: 150px;
+  margin-top:20px;
   margin-bottom: 30px;
   
 }
@@ -45,5 +49,10 @@
     text-align: center;
 }
 
+.ul li{
+ Display:inline;
+}
 
-
+.regGuestBtn{
+ cursor: pointer;
+}

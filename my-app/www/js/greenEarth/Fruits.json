@@ -1,0 +1,149 @@
+{
+ "name": [
+  {
+   "name": "Apples (5kg)",
+   "url": "http://www.greenearthorganics.ie/fruit-and-veg-for-juicing/apples-5kg.html",
+   "price": "€17.96 Ex Tax: €17.96",
+   "image": "http://www.greenearthorganics.ie/image/cache/data/apples-5kg-web-250x250.jpg",
+   "image_url": "http://www.greenearthorganics.ie/fruit-and-veg-for-juicing/apples-5kg.html"
+  },
+  {
+   "name": "Apples Royal Gala (750g)",
+   "url": "http://www.greenearthorganics.ie/fruit/apples-royal-gala.html",
+   "price": "€2.99 Ex Tax: €2.99",
+   "image": "http://www.greenearthorganics.ie/image/cache/Fruit/royal-gala-web-250x250.jpg",
+   "image_url": "http://www.greenearthorganics.ie/fruit/apples-royal-gala.html"
+  },
+  {
+   "name": "Coconut (1pc)",
+   "url": "http://www.greenearthorganics.ie/fruit/coconut-1pc.html",
+   "price": "€2.29 Ex Tax: €2.29",
+   "image": "http://www.greenearthorganics.ie/image/cache/data/coconuts-250x250.jpg",
+   "image_url": "http://www.greenearthorganics.ie/fruit/coconut-1pc.html"
+  },
+  {
+   "name": "Grapefruit red (1pc)",
+   "url": "http://www.greenearthorganics.ie/fruit/grapefruit-red-1-pc.html",
+   "price": "€1.59 Ex Tax: €1.59",
+   "image": "http://www.greenearthorganics.ie/image/cache/data/grapefruit-red-web-250x250.jpg",
+   "image_url": "http://www.greenearthorganics.ie/fruit/grapefruit-red-1-pc.html"
+  },
+  {
+   "name": "Grapes Green (400g)",
+   "url": "http://www.greenearthorganics.ie/fruit/grapes-green.html",
+   "price": "€4.49 Ex Tax: €4.49",
+   "image": "http://www.greenearthorganics.ie/image/cache/data/grapes-white-250x250.jpg",
+   "image_url": "http://www.greenearthorganics.ie/fruit/grapes-green.html"
+  },
+  {
+   "name": "Grapes Red (400g)",
+   "url": "http://www.greenearthorganics.ie/fruit/grapes-red.html",
+   "price": "€4.49 Ex Tax: €4.49",
+   "image": "http://www.greenearthorganics.ie/image/cache/data/grapes-red-web-250x250.jpg",
+   "image_url": "http://www.greenearthorganics.ie/fruit/grapes-red.html"
+  },
+  {
+   "name": "Kiwi (5pc)",
+   "url": "http://www.greenearthorganics.ie/fruit/kiwi-500g.html",
+   "price": "€1.98 Ex Tax: €1.98",
+   "image": "http://www.greenearthorganics.ie/image/cache/data/kiwis-web-250x250.jpg",
+   "image_url": "http://www.greenearthorganics.ie/fruit/kiwi-500g.html"
+  },
+  {
+   "name": "Kiwi Gold (400g)",
+   "url": "http://www.greenearthorganics.ie/fruit/kiwi-gold.html",
+   "price": "€3.26 Ex Tax: €3.26",
+   "image": "http://www.greenearthorganics.ie/image/cache/data/kiwi-gold-reseized-250x250.jpg",
+   "image_url": "http://www.greenearthorganics.ie/fruit/kiwi-gold.html"
+  },
+  {
+   "name": "Oranges (5kg)",
+   "url": "http://www.greenearthorganics.ie/fruit-and-veg-for-juicing/oranges-5kg.html",
+   "price": "€11.21 Ex Tax: €11.21",
+   "image": "http://www.greenearthorganics.ie/image/cache/data/5kg-oranges-(700-x-600)-250x250.jpg",
+   "image_url": "http://www.greenearthorganics.ie/fruit-and-veg-for-juicing/oranges-5kg.html"
+  },
+  {
+   "name": "Oranges Blood (4pc)",
+   "url": "http://www.greenearthorganics.ie/fruit/oranges-blood-500g.html",
+   "price": "€2.66 Ex Tax: €2.66",
+   "image": "http://www.greenearthorganics.ie/image/cache/data/blood-oranges-250x250.jpg",
+   "image_url": "http://www.greenearthorganics.ie/fruit/oranges-blood-500g.html"
+  },
+  {
+   "name": "Oranges Marmalade Bitter (1kg)",
+   "url": "http://www.greenearthorganics.ie/fruit-and-veg-for-juicing/oranges-marmalade-bitter.html",
+   "price": "€3.99 Ex Tax: €3.99",
+   "image": "http://www.greenearthorganics.ie/image/cache/data/oranges-250x250.jpg",
+   "image_url": "http://www.greenearthorganics.ie/fruit-and-veg-for-juicing/oranges-marmalade-bitter.html"
+  },
+  {
+   "name": "Organic Avocado Hass (1pc)",
+   "url": "http://www.greenearthorganics.ie/fruit/avocado-1pc.html",
+   "price": "€1.69 €1.49 Ex Tax: €1.49",
+   "image": "http://www.greenearthorganics.ie/image/cache/data/avocado-hass-web-250x250.jpg",
+   "image_url": "http://www.greenearthorganics.ie/fruit/avocado-1pc.html"
+  },
+  {
+   "name": "Organic Avocado Hass (2pc)",
+   "url": "http://www.greenearthorganics.ie/fruit/organic-avocado-hass-2pc.html",
+   "price": "€2.99 €2.79 Ex Tax: €2.79",
+   "image": "http://www.greenearthorganics.ie/image/cache/Fruit/avocado_2pc_web-250x250.jpg",
+   "image_url": "http://www.greenearthorganics.ie/fruit/organic-avocado-hass-2pc.html"
+  },
+  {
+   "name": "Pears (3pc)",
+   "url": "http://www.greenearthorganics.ie/fruit/organic-pears.html",
+   "price": "€3.73 Ex Tax: €3.73",
+   "image": "http://www.greenearthorganics.ie/image/cache/conference%20pears%20resized-250x250.jpg",
+   "image_url": "http://www.greenearthorganics.ie/fruit/organic-pears.html"
+  },
+  {
+   "name": "Pineapple (1pc)",
+   "url": "http://www.greenearthorganics.ie/fruit/pineapple-1pc.html",
+   "price": "€2.89 Ex Tax: €2.89",
+   "image": "http://www.greenearthorganics.ie/image/cache/data/pineapple-web-250x250.jpg",
+   "image_url": "http://www.greenearthorganics.ie/fruit/pineapple-1pc.html"
+  },
+  {
+   "name": "Organic Fruit Hamper",
+   "url": "http://www.greenearthorganics.ie/gift-vouchers-and-hampers/organic-fruit-hamper.html",
+   "price": "€45.00 Ex Tax: €45.00"
+  },
+  {
+   "name": "Bananas (800g / 4-6pc)",
+   "url": "http://www.greenearthorganics.ie/fruit/bananas.html",
+   "price": "€2.39 Ex Tax: €2.39"
+  },
+  {
+   "name": "Dates Medjool (150g)",
+   "url": "http://www.greenearthorganics.ie/nuts-seeds-and-dried-fruit/dates-medjool-150g.html",
+   "price": "€5.99 Ex Tax: €5.99"
+  },
+  {
+   "name": "Lemons unwaxed (2pc)",
+   "url": "http://www.greenearthorganics.ie/fruit/lemons-unwaxed.html",
+   "price": "€1.69 Ex Tax: €1.69"
+  },
+  {
+   "name": "Lime (1pc)",
+   "url": "http://www.greenearthorganics.ie/fruit/lime-1pc.html",
+   "price": "€0.99 Ex Tax: €0.99"
+  },
+  {
+   "name": "Mandarine (600g)",
+   "url": "http://www.greenearthorganics.ie/fruit/mandarine-500g.html",
+   "price": "€2.99 Ex Tax: €2.99"
+  },
+  {
+   "name": "Mango (1pc)",
+   "url": "http://www.greenearthorganics.ie/fruit/mango-1pc.html",
+   "price": "€1.99 Ex Tax: €1.99"
+  },
+  {
+   "name": "Oranges (1kg)",
+   "url": "http://www.greenearthorganics.ie/fruit-and-veg-for-juicing/organic-oranges.html",
+   "price": "€2.74 Ex Tax: €2.74"
+  }
+ ]
+}

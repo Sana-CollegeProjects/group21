@@ -38,27 +38,24 @@
     -->
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
 
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <link rel="stylesheet" type="text/css" href="css/prod_cat.css" />
-    <title>Product Categories</title>
+    <link rel="stylesheet" type="text/css" href="my-app/www/css/index.css" />
+    <title>Hello World</title>
 </head>
 
 <body>
-    <div class="body">
-         <a href = "vegetables.html"><div class="category" id="veg">
-            <div class="cat_title">Fresh Vegetables</div>
-        </div></a>
-        <a href = "fruits.html">
-        <div class="category" id="fruit">
-            <div class="cat_title">Fresh Fruits</div>
-        </div></a>
-        <a href = "food_cupboard.html">
-            <div class="category" id="dry">
-            <div class="cat_title">Food Cupboard</div>
-        </div></a>
-        <a href = "others.html"><div class="category" id="others">
-            <div class="cat_title">Meat and Dairy</div>
-        </div></a>
+    
+    <div class="app">
+        <br />
+        <br />
+        <form>
+          username<br>
+          <input type="text" name="username" required="required"><br>
+          password<br>
+          <input type="password" name="password" required="required"><br>
+          <input type="submit" value="Login" onclick=window.open("TescoProducts.html")><br>
+        </form>
+        <p>or alternatively, <a href="register.html">REGISTER</a></p>
+        
     </div>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
