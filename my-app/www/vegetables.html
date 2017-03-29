@@ -9,6 +9,7 @@
   
     <link rel="stylesheet" type="text/css" href="./css/index.css">
     <link rel="stylesheet" type="text/css" href="./css/prodSample.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!--script src="./js/jquery.min.js"></script-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     
@@ -19,6 +20,18 @@
 <body>
     <div class="body">
         <div class="page_name">Vegetables</div>
+        <div class="Toolbar">
+            <div class="backBtn">
+                <a href="product_categories.html" class="btn btn-default" id="back">Back</a>
+            </div>
+            <div class="cart">
+                <div class="btn btn-default" id="cart" onclick="show_cart();">Cart</div>
+            </div>
+            <div class="priceSort">
+                <div class="btn btn-default" id="p_right" onclick="sortfunction()">Sort price</div>
+            </div>
+            
+        </div>
         <div class="wrapper">
             <div class="products">
             </div>
@@ -64,27 +77,81 @@ Stackoverflow.com. (2016). Need Help Calling an API. [online] Available at: http
 
 <script type="text/javascript">
     $(document).ready(function() {
+        
   var veg = [];
   $.getJSON('js/greenEarth/Vegetables.json', function(data) {
       $.each(data.names, function(i, f) {
-          $(".products").append("<div class='product'><div id='name'>"+f.name+"</div><div id='prod_content'><div id='main_cont'><div id='desc'><b>Description </b> NA</div><div id='price'>"+f.price+"</div></div><div class='right'><div id='img'><img src='img/greenearthlogo.png' alt='Green Earth Organics Logo'></img></div><div id='add'><button class=' button-circle button-tiny '><i class= 'body1'>Add</i></button></div></div></div></div>")
+          $(".products").append("<div class='product'><div id='name'>"+f.name+"</div><div id='prod_content'><div id='main_cont'><div id='desc'><b>Description </b> NA</div><div id='price'>"+f.price+"</div></div><div class='right'><div id='img'><img src='img/greenearthlogo.png' alt='Green Earth Organics Logo'></img></div><div id='add'><button class=' button-circle button-tiny ' onclick=cart(this.name, this.price, 'Green Earth Organics')><i class= 'body1'>Add</i></button></div></div></div></div>")
      });
 
   });
     $.getJSON('js/superValu/fruitVeg/SVsalad.json', function(data) {
       $.each(data.salad, function(i, f) {
-          $(".products").append("<div class='product'><div id='name'>"+f.name+"</div><div id='prod_content'><div id='main_cont'><div id='desc'><b>Description </b> NA</div><div id='price'>"+f.price+"</div></div><div class='right'><div id='img'><img src='img/supervalulogo.png' alt='Green Earth Organics Logo'></img></div><div id='add'><button class=' button-circle button-tiny '><i class= 'body1'>Add</i></button></div></div></div></div>")
+          $(".products").append("<div class='product'><div id='name'>"+f.name+"</div><div id='prod_content'><div id='main_cont'><div id='desc'><b>Description </b> NA</div><div id='price'>"+f.price+"</div></div><div class='right'><div id='img'><img src='img/supervalulogo.png' alt='Green Earth Organics Logo'></img></div><div id='add'><button class=' button-circle button-tiny 'onclick=cart(this.name, this.price, 'Supervalu')><i class= 'body1'>Add</i></button></div></div></div></div>")
      });
 
   });
   $.getJSON('js/superValu/fruitVeg/SVpotatoes.json', function(data) {
       $.each(data.potatoes, function(i, f) {
-          $(".products").append("<div class='product'><div id='name'>"+f.name+"</div><div id='prod_content'><div id='main_cont'><div id='desc'><b>Description </b> NA</div><div id='price'>"+f.price+"</div></div><div class='right'><div id='img'><img src='img/supervalulogo.png' alt='Green Earth Organics Logo'></img></div><div id='add'><button class=' button-circle button-tiny '><i class= 'body1'>Add</i></button></div></div></div></div>")
+          $(".products").append("<div class='product'><div id='name'>"+f.name+"</div><div id='prod_content'><div id='main_cont'><div id='desc'><b>Description </b> NA</div><div id='price'>"+f.price+"</div></div><div class='right'><div id='img'><img src='img/supervalulogo.png' alt='Green Earth Organics Logo'></img></div><div id='add'><button class=' button-circle button-tiny 'onclick=cart(this.name, this.price, 'Supervalu')><i class= 'body1'>Add</i></button></div></div></div></div>")
      });
 
   });
   
+  //Add products to cart AJAX
+
+      $.ajax({
+        type:'post',
+        url:'store_items.php',
+        data:{
+          total_cart_items:"totalitems"
+        },
+        success:function(response) {
+          alert("Added successfully");
+        }
+      });
+
+
 });
+  function sortfunction(){
+    alert("Sorry, this feature is not available at the moment");
+    }
+    
+function cart(name, price, brand){
+	  var name=document.getElementById(name).value;
+	  var price=document.getElementById(price).value;
+	  var brand=document.getElementById(brand).value;
+	
+	  $.ajax({
+        type:'post',
+        url:'store_items.php',
+        data:{
+          item_name:name,
+          item_price:price,
+          item_brand:brand
+        },
+        success:function(response) {
+          alert("Stored in php");
+        }
+      });
+	
+    }
+
+    /*function show_cart()
+    {
+      $.ajax({
+      type:'post',
+      url:'store_items.php',
+      data:{
+        showcart:"cart"
+      },
+      success:function(response) {
+        document.getElementById("mycart").innerHTML=response;
+        $("#mycart").slideToggle();
+      }
+     });
+
+    }*/
 </script>
 
 </body>

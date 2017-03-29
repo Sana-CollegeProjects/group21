@@ -29,7 +29,7 @@
 #prod_content{
     background-color:#F7FFF2;
     width:100%;
-    min-height:70px;
+    min-height:100px;
 }
 #main_cont{
     float:left;
@@ -44,4 +44,21 @@
 .right #add{
     font-size:15px;
     margin-left:20px;
+}
+#back{
+    width:30%;
+    position:absolute;
+}
+#p_right{
+    width:40%;
+    float:right;
+    min-width:90px;
+}
+#cart{
+    width:30%;
+    float:right;
+    width:80px;
+}
+.wrapper{
+    margin-top:50px;
 }
