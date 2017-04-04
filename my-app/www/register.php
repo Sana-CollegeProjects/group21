@@ -1,4 +1,12 @@
 <?php
+
+
+    
+    
+    
+    
+
+
  ob_start();
  session_start();
  if (isset($_SESSION['user']) != "") {
@@ -6,32 +14,32 @@
  }
  
  include_once 'dbconnect.php';
- b
-$error = false;
-
-if (isset($_POST['button-signup'])) {
  
-     $name = trim($_POST['name']);
-     $name = strip_tags($name);
-     $name = htmlspecialchars($name);
+$error = true;
+
+if (isset($_POST['button-register'])) {
+ 
+     $username = trim($_POST['name']);
+     $username = strip_tags($name);
+     $username = htmlspecialchars($name);
  
      $email = trim($_POST['email']);
      $email = strip_tags($email);
      $email = htmlspecialchars($email);
  
-     $pass = trim($_POST['pass']);
-     $pass = strip_tags($pass);
-     $pass = htmlspecialchars($pass);
+     $password = trim($_POST['pass']);
+     $password = strip_tags($pass);
+     $password = htmlspecialchars($pass);
  
-     if (empty($name)) {
+     if (empty($username)) {
         $error = true;
-         $nameError = "Please enter your username.";
-     } else if (strlen($name) < 3) {
+         $usernameError = "Please enter your username.";
+     } else if (strlen($username) < 3) {
          $error = true;
-         $nameError = "Username must contains atleat 3 characters.";
-   } else if (!preg_match("/^[a-zA-Z ]+$/", $name)) {
+         $usernameError = "Username must contains atleat 3 characters.";
+   } else if (!preg_match("/^[a-zA-Z ]+$/", $username)) {
         $error = true;
-         $nameError = "Name must contain alphabets and space.";
+         $usernameError = "Name must contain alphabets and space.";
      }
  
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -44,20 +52,20 @@ if (isset($_POST['button-signup'])) {
          $count = mysqli_num_rows($result);
          if ($count != 0) {
              $error = true;
-             $emailError = "Provided Email is already in use.";
+             $emailError = "The Email is already in use.";
          }
      }
  
-     if (empty($pass)) {
+     if (empty($password)) {
          $error = true;
         $passError = "Please enter password.";
-     } else if (strlen($pass) < 6) {
+     } else if (strlen($password) < 6) {
          $error = true;
          $passError = "Password must contain 6 characters.";
      }
  
  
-     $password = hash('Group21', $pass);
+     $password = hash('Group21', $password);
  
  
      if (!$error) {
@@ -66,14 +74,16 @@ if (isset($_POST['button-signup'])) {
          $res = mysqli_query($connection, $query);
  
          if ($res) {
-             $errTyp = "success";
+             $errTyp = "Successful";
              $errMSG = "Register Successfully ";
              unset($name);
              unset($email);
              unset($pass);
          } else {
-             $errTyp = "danger";
+             $errTyp = "Danger";
              $errMSG = "oops unable to connect";
          }
      }
  }
+ 
+ ?>

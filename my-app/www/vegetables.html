@@ -77,50 +77,38 @@ Stackoverflow.com. (2016). Need Help Calling an API. [online] Available at: http
 
 <script type="text/javascript">
     $(document).ready(function() {
-        
-  var veg = [];
-  $.getJSON('js/greenEarth/Vegetables.json', function(data) {
+    
+    //Pulling green earth organics vegetables    
+    var veg = [];
+    $.getJSON('js/greenEarth/Vegetables.json', function(data) {
       $.each(data.names, function(i, f) {
-          $(".products").append("<div class='product'><div id='name'>"+f.name+"</div><div id='prod_content'><div id='main_cont'><div id='desc'><b>Description </b> NA</div><div id='price'>"+f.price+"</div></div><div class='right'><div id='img'><img src='img/greenearthlogo.png' alt='Green Earth Organics Logo'></img></div><div id='add'><button class=' button-circle button-tiny ' onclick=cart(this.name, this.price, 'Green Earth Organics')><i class= 'body1'>Add</i></button></div></div></div></div>")
+          $(".products").append("<div class='product'><div id='name'>"+f.name+"</div><div id='prod_content'><div id='main_cont'><div id='desc'><b>Description </b> NA</div><div id='price'>"+f.price+"</div></div><div class='right'><div id='img'><img src='img/greenearthlogo.png' alt='Green Earth Organics Logo'></img></div><div id='add'><button class=' button-circle button-tiny ' onclick=cart(this.name, this.price)><i class= 'body1'>Add</i></button></div></div></div></div>")
      });
-
-  });
+    });
+    
+    //Pulling supervalu's vegetables
     $.getJSON('js/superValu/fruitVeg/SVsalad.json', function(data) {
       $.each(data.salad, function(i, f) {
-          $(".products").append("<div class='product'><div id='name'>"+f.name+"</div><div id='prod_content'><div id='main_cont'><div id='desc'><b>Description </b> NA</div><div id='price'>"+f.price+"</div></div><div class='right'><div id='img'><img src='img/supervalulogo.png' alt='Green Earth Organics Logo'></img></div><div id='add'><button class=' button-circle button-tiny 'onclick=cart(this.name, this.price, 'Supervalu')><i class= 'body1'>Add</i></button></div></div></div></div>")
+          $(".products").append("<div class='product'><div id='name'>"+f.name+"</div><div id='prod_content'><div id='main_cont'><div id='desc'><b>Description </b> NA</div><div id='price'>"+f.price+"</div></div><div class='right'><div id='img'><img src='img/supervalulogo.png' alt='Green Earth Organics Logo'></img></div><div id='add'><button class=' button-circle button-tiny 'onclick=cart(this.name, this.price)><i class= 'body1'>Add tes</i></button></div></div></div></div>")
      });
-
-  });
-  $.getJSON('js/superValu/fruitVeg/SVpotatoes.json', function(data) {
+    });
+    $.getJSON('js/superValu/fruitVeg/SVpotatoes.json', function(data) {
       $.each(data.potatoes, function(i, f) {
-          $(".products").append("<div class='product'><div id='name'>"+f.name+"</div><div id='prod_content'><div id='main_cont'><div id='desc'><b>Description </b> NA</div><div id='price'>"+f.price+"</div></div><div class='right'><div id='img'><img src='img/supervalulogo.png' alt='Green Earth Organics Logo'></img></div><div id='add'><button class=' button-circle button-tiny 'onclick=cart(this.name, this.price, 'Supervalu')><i class= 'body1'>Add</i></button></div></div></div></div>")
-     });
-
+          $(".products").append("<div class='product'><div id='name'>"+f.name+"</div><div id='prod_content'><div id='main_cont'><div id='desc'><b>Description </b> NA</div><div id='price'>"+f.price+"</div></div><div class='right'><div id='img'><img src='img/supervalulogo.png' alt='Green Earth Organics Logo'></img></div><div id='add'><button class=' button-circle button-tiny 'onclick=cart(this.name, this.price)><i class= 'body1'>Add</i></button></div></div></div></div>")
+      });
+    });
   });
   
-  //Add products to cart AJAX
-
-      $.ajax({
-        type:'post',
-        url:'store_items.php',
-        data:{
-          total_cart_items:"totalitems"
-        },
-        success:function(response) {
-          alert("Added successfully");
-        }
-      });
-
-
-});
+  //Sorting by price
   function sortfunction(){
     alert("Sorry, this feature is not available at the moment");
     }
-    
-function cart(name, price, brand){
+  
+  //onclick Add button, product name, price and brand
+  function cart(name, price){
 	  var name=document.getElementById(name).value;
 	  var price=document.getElementById(price).value;
-	  var brand=document.getElementById(brand).value;
+	  //var brand=document.getElementById(brand).value;
 	
 	  $.ajax({
         type:'post',
@@ -128,7 +116,7 @@ function cart(name, price, brand){
         data:{
           item_name:name,
           item_price:price,
-          item_brand:brand
+          //item_brand:brand
         },
         success:function(response) {
           alert("Stored in php");
