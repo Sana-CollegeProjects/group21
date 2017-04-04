@@ -38,12 +38,13 @@ input[type=text]:focus {
     
     <section>
     <div class="move" >
-        
+        <!--MiniLogo-->
         <img  src="img/LogoMini.png"  alt="LogoMini" style="width:100px;height:100px;">
     </div>
     </section>
     <section>
     <div class="mid">
+        <!--The main Button-->
         <div>
             <button class="button" onclick=window.open("product_categories.html")><span> Search</span> </button>
    
@@ -79,83 +80,74 @@ input[type=text]:focus {
 <!--<gcse:searchbox-only resultsUrl="http://jsfiddle.net/devnook/2PC2f/6/show_html/"></gcse:searchbox-only> <!--http://jsfiddle.net/devnook/2PC2f/6/-->
 </body>
 <script>
- $.getJSON('js/superValu/fruitVeg/SVsalad.json', function(data) {
-      $.each(data.salad, function(i, f) {
-          $(".products").append("<div class='product'><div id='name'>"+f.name+"</div><div id='prod_content'><div id='main_cont'><div id='desc'><b>Description </b> NA</div><div id='price'>"+f.price+"</div></div><div class='right'><div id='img'><img src='img/supervalulogo.png' alt='Green Earth Organics Logo'></img></div><div id='add'><button class=' button-circle button-tiny 'onclick=cart(this.name, this.price)><i class= 'body1'>Add tes</i></button></div></div></div></div>")
-     });
-    });
-    $.getJSON('js/superValu/fruitVeg/SVpotatoes.json', function(data) {
-      $.each(data.potatoes, function(i, f) {
-          $(".products").append("<div class='product'><div id='name'>"+f.name+"</div><div id='prod_content'><div id='main_cont'><div id='desc'><b>Description </b> NA</div><div id='price'>"+f.price+"</div></div><div class='right'><div id='img'><img src='img/supervalulogo.png' alt='Green Earth Organics Logo'></img></div><div id='add'><button class=' button-circle button-tiny 'onclick=cart(this.name, this.price)><i class= 'body1'>Add</i></button></div></div></div></div>")
-      });
-    });
  
-  (function() {
-    var cx = '017643444788069204610:4gvhea_mvga';
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-        '//www.google.com/cse/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-  })();
+ 
+//   (function() {
+//     var cx = '017643444788069204610:4gvhea_mvga';
+//     var gcse = document.createElement('script');
+//     gcse.type = 'text/javascript';
+//     gcse.async = true;
+//     gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+//         '//www.google.com/cse/cse.js?cx=' + cx;
+//     var s = document.getElementsByTagName('script')[0];
+//     s.parentNode.insertBefore(gcse, s);
+//   })();
   
-  function _retrieveJsonData(retrieveDataCallback) {
-  if (!window.cachedTableData) {
-    var conData = JSON.parse(tableau.connectionData);
-    var jsonString = conData.jsonString;
-    if (conData.jsonUrl) {
-      var conUrl = _buildConnectionUrl(conData.jsonUrl);
-      // handle the json data from the remote source.     
-      var xhr = $.ajax({
-        url: conUrl,
-  crossDomain: true,
-        dataType: 'jsonp',
-        success: function(data)
-        {
-          window.cachedTableData = _jsToTable(data);
-          retrieveDataCallback(window.cachedTableData);
-        }
-      });
-      return;
-    }
-    try {
-      window.cachedTableData = _jsToTable(JSON.parse(conData.jsonString));
-    }
-    catch (e) {
-      tableau.abortWithError("unable to parse json data");
-      return;
-    }
-  }
-  retrieveDataCallback(window.cachedTableData);
-}
-// https://community.tableau.com/thread/179254
-$('#search').keydown(function(){
-$.getJSON("js/greenEarthVeg.json",function(data){
-var search = $('#search').val();
-var regex = new RegExp(search, 'i');
-var output;
-$.each(data, function(key, val){
-if((val.id.search(regex) != -1 ) || (val.name.search(regex) != -1)){
-    output += "<tr>";
-    output += "<td id='"+key+"'>"+val.id+"</td>";
-    output += "<td id='"+key+"'>"+val.name+"</td>";
-    output += "<td id='"+key+"'>"+val.email+"</td>";
-    output += "<td id='"+key+"'>"+val.phone+"</td>";
-    output += "<td id='"+key+"'>"+val.city+"</td>";
-    output += "</tr>";
-  }
-});
-$('tbody').html(output);
-});
-})
-simpleApp.controller('aboutController', function($scope, $http) {
-  $http.get('js/greenEarthVeg.json').then(function(response) {
-   $scope.data = response.data;
-  });
+//   function _retrieveJsonData(retrieveDataCallback) {
+//   if (!window.cachedTableData) {
+//     var conData = JSON.parse(tableau.connectionData);
+//     var jsonString = conData.jsonString;
+//     if (conData.jsonUrl) {
+//       var conUrl = _buildConnectionUrl(conData.jsonUrl);
+//       // handle the json data from the remote source.     
+//       var xhr = $.ajax({
+//         url: conUrl,
+//   crossDomain: true,
+//         dataType: 'jsonp',
+//         success: function(data)
+//         {
+//           window.cachedTableData = _jsToTable(data);
+//           retrieveDataCallback(window.cachedTableData);
+//         }
+//       });
+//       return;
+//     }
+//     try {
+//       window.cachedTableData = _jsToTable(JSON.parse(conData.jsonString));
+//     }
+//     catch (e) {
+//       tableau.abortWithError("unable to parse json data");
+//       return;
+//     }
+//   }
+//   retrieveDataCallback(window.cachedTableData);
+// }
+// // https://community.tableau.com/thread/179254
+// $('#search').keydown(function(){
+// $.getJSON("js/greenEarthVeg.json",function(data){
+// var search = $('#search').val();
+// var regex = new RegExp(search, 'i');
+// var output;
+// $.each(data, function(key, val){
+// if((val.id.search(regex) != -1 ) || (val.name.search(regex) != -1)){
+//     output += "<tr>";
+//     output += "<td id='"+key+"'>"+val.id+"</td>";
+//     output += "<td id='"+key+"'>"+val.name+"</td>";
+//     output += "<td id='"+key+"'>"+val.email+"</td>";
+//     output += "<td id='"+key+"'>"+val.phone+"</td>";
+//     output += "<td id='"+key+"'>"+val.city+"</td>";
+//     output += "</tr>";
+//   }
+// });
+// $('tbody').html(output);
+// });
+// })
+// simpleApp.controller('aboutController', function($scope, $http) {
+//   $http.get('js/greenEarthVeg.json').then(function(response) {
+//   $scope.data = response.data;
+//   });
 
-});
+// });
 // http://stackoverflow.com/questions/41520875/how-to-create-live-search-bar-with-data-from-json-file
 </script>
 
