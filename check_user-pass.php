@@ -42,7 +42,7 @@ $result=mysql_query($sql);
 // Mysql_num_row is counting table row
 if($count==1){
  $row = mysql_fetch_assoc($result);
- //if (crypt($password, $row['userPass']) == $row['userPass']){
+ //if ($cript($password, $row['userPass']) == $row['userPass']){
         session_register("userName");
         session_register("userPass"); 
         echo "Login Successful";
@@ -52,9 +52,9 @@ if($count==1){
     }
     else {
         //not reading from database so hard coding to redirect to searchPage.html
-        //header("location:my-app/www/SearchPage.html");
+        header("location:my-app/www/SearchPage.html");
     
-        echo "Wrong Username or Password";
+        //echo "Wrong Username or Password";
         //return false;
     
 }

@@ -324,17 +324,19 @@ body {
   background-color: #eee;
 }
 ul{
-    margin-top: 100px;
-    clear:both;
-    margin-right: auto;
-    width:280px;
-    height:275px;
+    
     
 }
 /*TextArea*/
 #text_id{
     position:fixed;
     width: 90%;
+    margin-top: 25%;
+    clear:both;
+    margin-right: auto;
+    left:5%;
+   
+    
 }
 /*vegetables1.json*/
 #myTable {

@@ -11,7 +11,7 @@
    
    
     <link rel="stylesheet" type="text/css" href="my-app/www/css/register.css" />
-    <title>Register</title>
+    <title>login</title>
 </head>
 
     <body>
