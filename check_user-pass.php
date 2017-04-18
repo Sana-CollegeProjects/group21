@@ -27,7 +27,7 @@ if(empty($_POST['password']))
 
 // Define $username and $password 
 $username=$_POST['userName']; 
-$password=md5($_POST['password']);
+$password=md5($_POST['userPass']);
 
 
 // To protect MySQL injection (more detail about MySQL injection)
@@ -42,9 +42,9 @@ $result=mysql_query($sql);
 // Mysql_num_row is counting table row
 if($count==1){
  $row = mysql_fetch_assoc($result);
- //if (crypt($password, $row['password']) == $row['password']){
+ //if (crypt($password, $row['userPass']) == $row['userPass']){
         session_register("userName");
-        session_register("password"); 
+        session_register("userPass"); 
         echo "Login Successful";
         return true;
         //header("location:my-app/www/SearchPage.html");
@@ -52,7 +52,7 @@ if($count==1){
     }
     else {
         //not reading from database so hard coding to redirect to searchPage.html
-        header("location:my-app/www/SearchPage.html");
+        //header("location:my-app/www/SearchPage.html");
     
         echo "Wrong Username or Password";
         //return false;

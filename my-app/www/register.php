@@ -38,5 +38,5 @@ echo "Connected to Database<br />";
        
 }
 
-
+ob_flush();
 ?>
