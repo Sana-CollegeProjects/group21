@@ -27,11 +27,10 @@
       </b></b><input style="height:30px; width: 200px; font-size:12pt; font-family:Helvetica Neue;" type="password" name="password" required="required" placeholder="Enter Password" required/><br>
       <br><br>
       <input style="height:40px; width: 110px; font-size:13pt; color:black; font-family:Helvetica Neue; cursor: pointer; background-color: gray;"  type="submit" value="Login"/>
-      </form>
-      <form class="input">
+      
     <p style="text-align:center;"> Don't have an account </p><br/>
-    <input class="regGuestBtn" onclick="location.href ='reg2Pg.php';"  type="submit" value="Register" /> or 
-    <input class="regGuestBtn" onclick="location.href ='product_categories.html';"  type="submit" value="Use as Guest" /></p>
+    <input class="regGuestBtn" id="regBtn" onclick="location.href ='my-app/www/reg2Pg.php';"  type="submit" value="Register" /> or 
+    <input class="regGuestBtn" id="guestBtn" onclick="location.href ='my-app/www/product_categories.html';"  type="submit" value="Use as Guest" /></p>
       </form></div>
 </div>
    
