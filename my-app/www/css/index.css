@@ -324,10 +324,13 @@ body {
 #myUL li a:hover:not(.header) {
   background-color: #eee;
 }
-
+/*Minilogo*/
+.minilogo{
+    margin-left:35%;
+}
 /*TextArea*/
 #text_id{
-    position:relative;
+    position:fixed;
     width: 90%;
     height:50%;
     margin-top: 25%;
