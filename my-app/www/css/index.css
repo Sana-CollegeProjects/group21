@@ -328,8 +328,8 @@ body {
 /*TextArea*/
 #text_id{
     position:fixed;
-    width: 90%;
-    height:50%;
+    /*width: 90%;*/
+    /*height:50%;*/
     margin-top: 25%;
     clear:both;
     margin-right: auto;
