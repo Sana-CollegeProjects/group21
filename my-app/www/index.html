@@ -1,170 +1,39 @@
-<!DOCTYPE html>
+<html DOCTYPE!>
 <html>
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="keywords" content="HTML,CSS,XML,JavaScript">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vegetables</title>
-  <!--<link rel="stylesheet" type="text/css" href="cart_style.css" />-->
-
-    <link rel="stylesheet" type="text/css" href="css/prodSample.css">
-  
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript">
-
-//     $(document).ready(function(){
-
-//       $.ajax({
-//         type:'post',
-//         url:'store_items.php',
-//         data:{
-//           total_cart_items:"totalitems"
-//         },
-//         success:function(response) {
-//           document.getElementById("total_items").value=response;
-//         }
-//       });
-
-//     });
-
-//     function cart(id)
-//     {
-// 	  var ele=document.getElementById(id);
-// 	  var img_src=ele.getElementsByTagName("img")[0].src;
-// 	  var name=document.getElementById(id+"_name").value;
-// 	  var price=document.getElementById(id+"_price").value;
-	
-// 	  $.ajax({
-//         type:'post',
-//         url:'store_items.php',
-//         data:{
-//           item_src:img_src,
-//           item_name:name,
-//           item_price:price
-//         },
-//         success:function(response) {
-//           document.getElementById("total_items").value=response;
-//         }
-//       });
-	
-//     }
-
-//     function show_cart()
-//     {
-//       $.ajax({
-//       type:'post',
-//       url:'store_items.php',
-//       data:{
-//         showcart:"cart"
-//       },
-//       success:function(response) {
-//         document.getElementById("mycart").innerHTML=response;
-//         $("#mycart").slideToggle();
-//       }
-//     });
-
-//     }
-	
- </script>
-  
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+   
+   
+    <link rel="stylesheet" type="text/css" href="my-app/www/css/register.css" />
+    <title>Register</title>
 </head>
 
-<body>
-  <h1>Vegetables</h1>
-<!-- creates the cart button on the top left corner -->
-<p id="cart_button" onclick="show_cart();">
-  <img src="img/cart_icon.png">
-  <input type="button" id="total_items" value="">
-</p>
-<!-- creates empty div for added products to appear -->
-<div id="mycart">
+    <body>
+         
+    
+     <div class="register" >
+      <div style=" background-color: gray; position: absolute;   width: 400px;  height: 500px;   left: 35%;   margin: 0 auto;  margin-top:10px;" class="child">
+       <img src="my-app/www/img/Shapping.png" >
+       <form action="check_user-pass.php" class="input" method="POST" >
+      <h1 class="h1"><b>Login</b></h1>
+      </b></b><input style="height:30px; width: 200px; font-size:12pt; font-family: Helvetica Neue;" type="text" name="userName" required="required" placeholder="Enter Username" required /><br>
+      <br><br>
+      </b></b><input style="height:30px; width: 200px; font-size:12pt; font-family:Helvetica Neue;" type="password" name="password" required="required" placeholder="Enter Password" required/><br>
+      <br><br>
+      <input style="height:40px; width: 110px; font-size:13pt; color:black; font-family:Helvetica Neue; cursor: pointer; background-color: gray;"  type="submit" value="Login"/>
+      </form>
+      <form class="input">
+    <p style="text-align:center;"> Don't have an account </p><br/>
+    <input class="regGuestBtn" onclick="location.href ='reg2Pg.php';"  type="submit" value="Register" /> or 
+    <input class="regGuestBtn" onclick="location.href ='product_categories.html';"  type="submit" value="Use as Guest" /></p>
+      </form></div>
 </div>
-
-<!-- Creates an empty div. here, the products from the json file should load -->
-<div id="item_div">
-</div>
-
-  <script type="text/javascript" src="./js/cordova.js"></script>
-  <script type="text/javascript" src="./js/index.js"></script>
-  <script type="text/javascript">
-    $(document).ready(function() {
-    
-    //Updates shopping cart number of items
-          $.ajax({
-        type:'post',
-        url:'store_items.php',
-        data:{
-          total_cart_items:"totalitems"
-        },
-        success:function(response) {
-          document.getElementById("total_items").value=response;
-        }
-      });
-
-    });
-    
-    //Pulling green earth organics vegetables    
-    var veg = [];
-    
-    $.getJSON('js/greenEarth/Vegetables.json', function(data) {
-      $.each(data.names, function(i, f) {
-        var id= 'item'.concat(i);
-          $("#item_div").append("<div class='product'id='"+id+
-          "'><div id='name'>"+f.name+"</div><div id='prod_content'><div id='main_cont'><div id='desc'><img src='"+
-          f.picture+"'></img></div><div id='price'>"+
-          f.price+"</div></div><div class='right'><div id='img_logo'><img src='img/greenearthlogo.png' alt='Green Earth Organics Logo'"+
-          "></img></div><div id='add'><input type='button' class=' button-circle button-tiny ' value='Add' onclick='cart(&#39;"+id+"&#39;)' /></div></div></div><input type='hidden' id='"+id+"_name' value='"+
-          f.name+"' /><input type='hidden' id='"+id+"_price' value='"+f.price+"'/>");
-     });
-
-    });
-    //<input type='button' class=' button-circle button-tiny ' value='Add' onclick='cart(&#39;"+id+"&#39;)' />
-    
-    //Add product names and prices to the cart
-     function cart(id)
-    {
-	  var ele=document.getElementById(id);
-	  var img_src=ele.getElementsByTagName("img")[0].src;
-	  var name=document.getElementById(id+"_name").value;
-	  var price=document.getElementById(id+"_price").value;
-	
-	  $.ajax({
-        type:'post',
-        url:'store_items.php',
-        data:{
-          item_src:img_src,
-          item_name:name,
-          item_price:price
-        },
-        success:function(response) {
-          document.getElementById("total_items").value=response;
-        }
-      });
-	
-    }
-
-  //Activates when cart button is pressed so that the added products can be displated
-    function show_cart()
-    {
-      $.ajax({
-      type:'post',
-      url:'store_items.php',
-      data:{
-        showcart:"cart"
-      },
-      success:function(response) {
-        document.getElementById("mycart").innerHTML=response;
-        $("#mycart").slideToggle();
-      }
-     });
-
-    }
-    
-    function empty_cart(){
-      console.log("Cart cannot be emptied yet since code hasnt been added.");
-    }
-    
-  </script>
+   
 
 </body>
-</html>
