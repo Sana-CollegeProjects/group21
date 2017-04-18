@@ -4,13 +4,12 @@
   <meta charset="UTF-8">
   <meta name="description" content="Free Web tutorials">
   <meta name="keywords" content="HTML,CSS,XML,JavaScript">
-  <meta name="author" content="John Doe">
+  <meta name="author" content="Sana Diwan">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
     <link rel="stylesheet" type="text/css" href="./css/index.css">
     <link rel="stylesheet" type="text/css" href="./css/prodSample.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!--script src="./js/jquery.min.js"></script-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     
     <title>Vegetables</title>
@@ -38,42 +37,11 @@
         </div>
     </div>
 
-    
+    <form action="">
+  <input keypress="()" name="search_query" onkeyup="" maxlength="25" id="myInput" type="text" placeholder="Search.."></input>
+   </form>
     <script type="text/javascript" src="./js/cordova.js"></script>
     <script type="text/javascript" src="./js/index.js"></script>
-    
-<!--TESTING TESTING TESTING
-Trying to pull in Tesco API data
-Code source: 
-Stackoverflow.com. (2016). Need Help Calling an API. [online] Available at: http://stackoverflow.com/questions/36684617/need-help-calling-an-api [Accessed 16 Mar. 2017].
-
-<script type="text/javascript">
-    $(function() {
-        var params = {
-            // Request parameters
-        };
-      
-        $.ajax({
-            url: "https://dev.tescolabs.com/grocery/products/?query=vegetables&offset=0&limit=12" + $.param(params),
-            beforeSend: function(xhrObj){
-                // Request headers
-                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","c0c8b5b2dae4428ea9f278c83d2b1be7");
-            },
-            type: "GET",
-            // Request body
-            data: "{body}",
-            dataType: 'jsonp',
-        })
-        .done(function(data) {
-            alert("success");
-        })
-        .fail(function() {
-            alert("error");
-        });
-    });
-    
-</script>
-------------->
 
 <script type="text/javascript">
     $(document).ready(function() {
@@ -89,7 +57,7 @@ Stackoverflow.com. (2016). Need Help Calling an API. [online] Available at: http
     //Pulling supervalu's vegetables
     $.getJSON('js/superValu/fruitVeg/SVsalad.json', function(data) {
       $.each(data.salad, function(i, f) {
-          $(".products").append("<div class='product'><div id='name'>"+f.name+"</div><div id='prod_content'><div id='main_cont'><div id='desc'><b>Description </b> NA</div><div id='price'>"+f.price+"</div></div><div class='right'><div id='img'><img src='img/supervalulogo.png' alt='Green Earth Organics Logo'></img></div><div id='add'><button class=' button-circle button-tiny 'onclick=cart(this.name, this.price)><i class= 'body1'>Add tes</i></button></div></div></div></div>")
+          $(".products").append("<div class='product'><div id='name'>"+f.name+"</div><div id='prod_content'><div id='main_cont'><div id='desc'><b>Description </b> NA</div><div id='price'>"+f.price+"</div></div><div class='right'><div id='img'><img src='img/supervalulogo.png' alt='Green Earth Organics Logo'></img></div><div id='add'><button class=' button-circle button-tiny 'onclick=cart(this.name, this.price)><i class= 'body1'>Add</i></button></div></div></div></div>")
      });
     });
     $.getJSON('js/superValu/fruitVeg/SVpotatoes.json', function(data) {

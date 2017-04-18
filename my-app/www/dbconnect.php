@@ -1,20 +1,27 @@
 <?php
 
-define('db_host', '127.0.0.1');
-define('db_name', 'register');
-define('db_user','root');
-define('db_password','');
+    $host = "127.0.0.1";
+    $user = "dany753";                    
+    $pass = "";                                  //Remember, there is NO password by default!
+    $db = "USER_DB";                                  //Your database name you want to connect to
+    $port = 3306;  
+    //The port #. It is always 3306
+    $connection = mysqli_connect($host, $user, $pass, $db, $port)or die(mysql_error());
+    
+    
+    
+    $query = "Select * From USER_DB";
+    $result = mysqli_query($connection, $query);
 
-
-
-$con=mysql_connect(db_host,db_user,db_password) or die("Database failed to connect to MYSQL: " . mysql_error()); 
-$db=mysql_select_db(db_name,$con) or die("Database failed to connect to MYSQL: " . mysql_error());
-if (mysqli_connect_errno($con)) { echo "Database failed to connect to MYSQL: " . mysqli_connect_error(); } 
-else 
-{
-echo “Database Connected Successfully”;
-} 
-
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo "The ID is: " . $row['id'] . " and the Username is: " . $row['username']
+    
 ?>
+                            
+
+
+
+
+
 
 

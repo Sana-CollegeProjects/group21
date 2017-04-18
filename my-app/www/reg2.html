@@ -1,3 +1,17 @@
+<?php 
+
+if(!empty($success_message)) {
+?>	
+		<div class="success-message">
+<?php
+if(isset($success_message)) echo $success_message; 
+?></div>
+		<?php } ?>
+		<?php if(!empty($error_message)) { ?>	
+		<div class="error-message">
+		    
+		    <?php if(isset($error_message)) echo $error_message; ?></div>
+		<?php } ?> 
 
 <html DOCTYPE!>
 <html>
@@ -11,18 +25,29 @@
     <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
    
    
-    <link rel="stylesheet" type="text/css" href="css/register.css" />
+    <link rel="stylesheet" type="text/css" href="css/RegisterPage.css" />
     <title>Register</title>
 </head>
 
 <body>
- 
+ <?php
+
+  if(isset($_POST['save']))
+{
+    $sql = "INSERT INTO users (username, password, email)
+    VALUES ('".$_POST["username"]."','".$_POST["password"]."','".$_POST["email"]."')";
+
+    $result = mysqli_query($conn,$sql);
+}
+
+?>
     <div class="register">
       
       <div class="child">
-       <img src="Shapping.JPG" >
-       
-       <form class="input" >
+     <img src="img/Shapping.png" style="height:140px; width: 140px; margin: 0 auto;  margin-left: auto;  margin-top:90px;  margin-bottom: 0px; " >
+
+
+       <form class="input" action="register.php" method="post">
       <h1 class="h1"><b>Sign Up</b></h1>
       </b></b><input style="height:30px; width: 200px; font-size:12pt; font-family: Helvetica Neue;" type="text" name="username" required="required" placeholder="Enter Username" required /><br>
       <br>
@@ -32,7 +57,7 @@
       <br>
       </b></b><input style="height:30px; width: 200px; font-size:12pt; font-family:Helvetica Neue; " type="password" name="psswd" required="required" placeholder="Comfirm Password" /><br>
       <br>
-      <input name="button-register" style="height:40px; width: 110px; font-size:13pt; color:black; font-family:Helvetica Neue; cursor: pointer; background-color: gray;"  type="submit" value="Register" />
+      <input name="button-register" style="height:40px; width: 110px; font-size:13pt; color:black; font-family:Helvetica Neue; cursor: pointer; background-color: brown;"  type="submit" value="Register" />
 
                                      
                                

@@ -1,35 +1,32 @@
 
 
-.register{
-        background-image: url("http://www.findyourcornwall.co.uk/img/FYC-shopping-food+drink-001.jpg");
-        width:100%;
+  .register{
+        background-color: silver;
+        background-repeat: no-repeat;
+        width: 100%;
         height:100%;
-        background-repeat; no-repeat;
+        }
     
-    }
-    
-    .child{
-  background-color: white;
-  position: absolute;
-  width: 90%;
-  height: auto;
-  z-index: 15;
-  top: 30%;
-  left: 50%;
- /* margin: -100px 0 0 -150px;*/
- margin:-20% 0 0 -20%;
  
-}
 
-.child img{
+ .child img{
  display: block;
  margin: 0 auto;
   margin-left: auto;
-	width:150px;
-  height: 150px;
+	width:90px;
+  height: 90px;
   margin-top:20px;
   margin-bottom: 30px;
   
+}
+
+.child{
+ background-color: yellow; 
+ width: 400px;
+ height: 550px;
+ margin-top: 30px;
+ margin-left: 10px; 
+ 
 }
 
 .h1{
@@ -56,3 +53,29 @@
 .regGuestBtn{
  cursor: pointer;
 }
+
+
+
+<?php
+   require_once('ConnectRegphp.php');
+  if(isset($_POST) & !empty($_POST)){
+      
+      $username = mysqli_real_escape_string($conection, $_POST['username']) ;
+      $email = mysqli_real_escape_string($conection, $_POST['email']) ;
+      $password = md5($conection, $_POST['password']) ;
+
+
+     
+{
+    $sql = "INSERT INTO users (username, password, email)
+    VALUES ('".$_POST["username"]."','".$_POST["password"]."','".$_POST["email"]."')";
+
+    $result = mysqli_query($conn,$sql);
+}    if($result){
+        echo 'You have successfully registered';
+            }else{
+        echo 'Unable to register';
+       
+}
+
+?>

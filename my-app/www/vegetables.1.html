@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html><head>
+  
+  <meta charset="UTF-8">
+  <meta name="description" content="Free Web tutorials">
+  <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+  <meta name="author" content="John Doe">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <link rel="stylesheet" type="text/css" href="./css/prodSample.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!--script src="./js/jquery.min.js"></script-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    
+    <title>Vegetables</title>
+
+</head>
+
+<body>
+    <!--<div class="body">-->
+    <!--    <div class="page_name">Vegetables</div>-->
+    <!--    <div class="Toolbar">-->
+    <!--        <div class="backBtn">-->
+    <!--            <a href="product_categories.html" class="btn btn-default" id="back">Back</a>-->
+    <!--        </div>-->
+    <!--        <div class="cart">-->
+    <!--            <div class="btn btn-default" id="cart" onclick="show_cart();">Cart</div>-->
+    <!--        </div>-->
+    <!--        <div class="priceSort">-->
+    <!--            <div class="btn btn-default" id="p_right" onclick="sortfunction()">Sort price</div>-->
+    <!--        </div>-->
+            
+    <!--    </div>-->
+    <!--    <div class="wrapper">-->
+    <!--        <div class="products">-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--</div>-->
+
+
+		<body>
+			<table border=1>
+				<thead>
+					<tr>
+						<th>name</th>
+						<th>price</th>
+						<th>picture</th>
+						<th>picture_url</th>
+						<th>COLUMN5</th>
+					</tr>
+				</thead>
+				<tbody>
+				
+				</tbody>
+			</table>
+			<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+
+<table id="myTable">
+  <tr class="header">
+    <th style="width:60%;">Name</th>
+    <th style="width:40%;">Country</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Berglunds snabbkop</td>
+    <td>Sweden</td>
+  </tr>
+  <tr>
+    <td>Island Trading</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>Koniglich Essen</td>
+    <td>Germany</td>
+  </tr>
+</table>
+		</body>
+
+
+    <form action="">
+  <input  name="search_query" onkeyup="showit()" maxlength="25" id="myInput" type="text" placeholder="Search.."></input>
+   </form>
+    <script type="text/javascript" src="./js/cordova.js"></script>
+    <script type="text/javascript" src="./js/index.js"></script>
+    
+<script>
+function showit() {
+  // Declare variables 
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }//end of else
+    }//end of if
+  }//end of for loop 
+}//end of function show()
+</script>
+
+
+<!--TESTING TESTING TESTING
+Trying to pull in Tesco API data
+Code source: 
+Stackoverflow.com. (2016). Need Help Calling an API. [online] Available at: http://stackoverflow.com/questions/36684617/need-help-calling-an-api [Accessed 16 Mar. 2017].
+
+<script type="text/javascript">
+    $(function() {
+        var params = {
+            // Request parameters
+        };
+      
+        $.ajax({
+            url: "https://dev.tescolabs.com/grocery/products/?query=vegetables&offset=0&limit=12" + $.param(params),
+            beforeSend: function(xhrObj){
+                // Request headers
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","c0c8b5b2dae4428ea9f278c83d2b1be7");
+            },
+            type: "GET",
+            // Request body
+            data: "{body}",
+            dataType: 'jsonp',
+        })
+        .done(function(data) {
+            alert("success");
+        })
+        .fail(function() {
+            alert("error");
+        });
+    });
+    
+</script>
+------------->
+
+<script type="text/javascript">
+  //  $(document).ready(function() {
+    
+  //  //Pulling green earth organics vegetables    
+  //  var veg = [];
+  //  $.getJSON('js/greenEarth/Vegetables.json', function(data) {
+  //    $.each(data.names, function(i, f) {
+  //        $(".products").append("<div class='product'><div id='name'>"+f.name+"</div><div id='prod_content'><div id='main_cont'><div id='desc'><b>Description </b> NA</div><div id='price'>"+f.price+"</div></div><div class='right'><div id='img'><img src='img/greenearthlogo.png' alt='Green Earth Organics Logo'></img></div><div id='add'><button class=' button-circle button-tiny ' onclick=cart(this.name, this.price)><i class= 'body1'>Add</i></button></div></div></div></div>")
+  //   });
+  //  });
+    
+  //  //Pulling supervalu's vegetables
+  //  $.getJSON('js/superValu/fruitVeg/SVsalad.json', function(data) {
+  //    $.each(data.salad, function(i, f) {
+  //        $(".products").append("<div class='product'><div id='name'>"+f.name+"</div><div id='prod_content'><div id='main_cont'><div id='desc'><b>Description </b> NA</div><div id='price'>"+f.price+"</div></div><div class='right'><div id='img'><img src='img/supervalulogo.png' alt='Green Earth Organics Logo'></img></div><div id='add'><button class=' button-circle button-tiny 'onclick=cart(this.name, this.price)><i class= 'body1'>Add</i></button></div></div></div></div>")
+  //   });
+  //  });
+  //  $.getJSON('js/superValu/fruitVeg/SVpotatoes.json', function(data) {
+  //    $.each(data.potatoes, function(i, f) {
+  //        $(".products").append("<div class='product'><div id='name'>"+f.name+"</div><div id='prod_content'><div id='main_cont'><div id='desc'><b>Description </b> NA</div><div id='price'>"+f.price+"</div></div><div class='right'><div id='img'><img src='img/supervalulogo.png' alt='Green Earth Organics Logo'></img></div><div id='add'><button class=' button-circle button-tiny 'onclick=cart(this.name, this.price)><i class= 'body1'>Add</i></button></div></div></div></div>")
+  //    });
+  //  });
+  //});
+  
+  //Sorting by price
+  function sortfunction(){
+    alert("Sorry, this feature is not available at the moment");
+    }
+  
+  //onclick Add button, product name, price and brand
+  function cart(name, price){
+	  var name=document.getElementById(name).value;
+	  var price=document.getElementById(price).value;
+	  //var brand=document.getElementById(brand).value;
+	
+	  $.ajax({
+        type:'post',
+        url:'store_items.php',
+        data:{
+          item_name:name,
+          item_price:price,
+          //item_brand:brand
+        },
+        success:function(response) {
+          alert("Stored in php");
+        }
+      });
+	
+    }
+
+    /*function show_cart()
+    {
+      $.ajax({
+      type:'post',
+      url:'store_items.php',
+      data:{
+        showcart:"cart"
+      },
+      success:function(response) {
+        document.getElementById("mycart").innerHTML=response;
+        $("#mycart").slideToggle();
+      }
+     });
+
+    }*/
+</script>
+
+</body>
+</html>

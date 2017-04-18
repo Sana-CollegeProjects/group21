@@ -1,0 +1,50 @@
+
+
+  .register{
+        background-color:silver;
+        width: 100%;
+        height:100%;
+       
+    }
+    
+
+    
+ .child{
+  
+}
+
+ .child img{
+ display: block;
+ margin: 0 auto;
+  margin-left: auto;
+	 width:80px;
+  height: 90px;
+  margin-top:5px;
+  margin-bottom: 10px;
+  
+}
+
+.h1{
+    text-align: center;
+    color: black;
+}
+
+
+.button{
+    position: absolute;
+    top: 50px;
+    left: 110px;
+    margin: 0 auto;  
+} 
+
+.input{
+    text-align: center;
+}
+
+.ul li{
+ Display:inline;
+}
+
+.regGuestBtn{
+ cursor: pointer;
+}

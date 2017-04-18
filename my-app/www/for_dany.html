@@ -19,19 +19,6 @@
 
 <body>
     <div class="body">
-        <div class="page_name">Vegetables</div>
-        <div class="Toolbar">
-            <div class="backBtn">
-                <a href="product_categories.html" class="btn btn-default" id="back">Back</a>
-            </div>
-            <div class="cart">
-                <div class="btn btn-default" id="cart" onclick="show_cart();">Cart</div>
-            </div>
-            <div class="priceSort">
-                <div class="btn btn-default" id="p_right" onclick="sortfunction()">Sort price</div>
-            </div>
-            
-        </div>
         <div class="wrapper">
             <div class="products">
             </div>
@@ -41,44 +28,10 @@
     
     <script type="text/javascript" src="./js/cordova.js"></script>
     <script type="text/javascript" src="./js/index.js"></script>
-    
-<!--TESTING TESTING TESTING
-Trying to pull in Tesco API data
-Code source: 
-Stackoverflow.com. (2016). Need Help Calling an API. [online] Available at: http://stackoverflow.com/questions/36684617/need-help-calling-an-api [Accessed 16 Mar. 2017].
 
 <script type="text/javascript">
-    $(function() {
-        var params = {
-            // Request parameters
-        };
-      
-        $.ajax({
-            url: "https://dev.tescolabs.com/grocery/products/?query=vegetables&offset=0&limit=12" + $.param(params),
-            beforeSend: function(xhrObj){
-                // Request headers
-                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","c0c8b5b2dae4428ea9f278c83d2b1be7");
-            },
-            type: "GET",
-            // Request body
-            data: "{body}",
-            dataType: 'jsonp',
-        })
-        .done(function(data) {
-            alert("success");
-        })
-        .fail(function() {
-            alert("error");
-        });
-    });
-    
-</script>
-------------->
 
-<script type="text/javascript">
-    $(document).ready(function() {
-    
-    //Pulling green earth organics vegetables    
+  function pullJSON(){
     var veg = [];
     $.getJSON('js/greenEarth/Vegetables.json', function(data) {
       $.each(data.names, function(i, f) {
@@ -97,49 +50,7 @@ Stackoverflow.com. (2016). Need Help Calling an API. [online] Available at: http
           $(".products").append("<div class='product'><div id='name'>"+f.name+"</div><div id='prod_content'><div id='main_cont'><div id='desc'><b>Description </b> NA</div><div id='price'>"+f.price+"</div></div><div class='right'><div id='img'><img src='img/supervalulogo.png' alt='Green Earth Organics Logo'></img></div><div id='add'><button class=' button-circle button-tiny 'onclick=cart(this.name, this.price)><i class= 'body1'>Add</i></button></div></div></div></div>")
       });
     });
-  });
-  
-  //Sorting by price
-  function sortfunction(){
-    alert("Sorry, this feature is not available at the moment");
     }
-  
-  //onclick Add button, product name, price and brand
-  function cart(name, price){
-	  var name=document.getElementById(name).value;
-	  var price=document.getElementById(price).value;
-	  //var brand=document.getElementById(brand).value;
-	
-	  $.ajax({
-        type:'post',
-        url:'store_items.php',
-        data:{
-          item_name:name,
-          item_price:price,
-          //item_brand:brand
-        },
-        success:function(response) {
-          alert("Stored in php");
-        }
-      });
-	
-    }
-
-    /*function show_cart()
-    {
-      $.ajax({
-      type:'post',
-      url:'store_items.php',
-      data:{
-        showcart:"cart"
-      },
-      success:function(response) {
-        document.getElementById("mycart").innerHTML=response;
-        $("#mycart").slideToggle();
-      }
-     });
-
-    }*/
 </script>
 
 </body>

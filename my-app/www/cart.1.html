@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    * {
+  box-sizing: border-box;
+}
+
+#myInput {
+    top:10%;
+    position:fixed;
+    left:5%;
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 90%;
+  font-size: 16px;
+  padding: 12px 50px 12px 40px;
+  border: 6px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
+}
+  </style>
+  <meta charset="UTF-8">
+  <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vegetables</title>
+  <link rel="stylesheet" type="text/css" href="cart_style.css" />
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+
+//     $(document).ready(function(){
+
+//       $.ajax({
+//         type:'post',
+//         url:'store_items.php',
+//         data:{
+//           total_cart_items:"totalitems"
+//         },
+//         success:function(response) {
+//           document.getElementById("total_items").value=response;
+//         }
+//       });
+
+//     });
+
+//     function cart(id)
+//     {
+// 	  var ele=document.getElementById(id);
+// 	  var img_src=ele.getElementsByTagName("img")[0].src;
+// 	  var name=document.getElementById(id+"_name").value;
+// 	  var price=document.getElementById(id+"_price").value;
+	
+// 	  $.ajax({
+//         type:'post',
+//         url:'store_items.php',
+//         data:{
+//           item_src:img_src,
+//           item_name:name,
+//           item_price:price
+//         },
+//         success:function(response) {
+//           document.getElementById("total_items").value=response;
+//         }
+//       });
+	
+//     }
+
+//     function show_cart()
+//     {
+//       $.ajax({
+//       type:'post',
+//       url:'store_items.php',
+//       data:{
+//         showcart:"cart"
+//       },
+//       success:function(response) {
+//         document.getElementById("mycart").innerHTML=response;
+//         $("#mycart").slideToggle();
+//       }
+//     });
+
+//     }
+	
+ </script>
+  
+</head>
+
+<body>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search by product.." title="Type in a name">
+
+<p id="cart_button" onclick="show_cart();">
+  <img src="img/cart_icon.png">
+  <input type="button" id="total_items" value="">
+</p>
+
+<div id="mycart">
+</div>
+
+<h1>Simple Add To Cart System Using jQuery,Ajax And PHP</h1>
+<div data-page="home" class="page">
+  <!-- Search Bar -->
+  <form data-search-list=".list-block-search" data-search-in=".item-title" class="searchbar searchbar-init">
+    <div class="searchbar-input">
+      <input type="search" placeholder="Search"><a href="#" class="searchbar-clear"></a>
+    </div><a href="#" class="searchbar-cancel">Cancel</a>
+  </form>
+ 
+  <!-- Search Bar overlay -->
+  <div class="searchbar-overlay"></div>
+ 
+  <div class="page-content">
+    <!-- This block will be displayed if nothing found -->
+    <div class="content-block searchbar-not-found">
+      <div class="content-block-inner">Nothing found</div>
+    </div>
+ 
+    <!-- This block will be displayed if anything found, and this list block is used a searbar target -->
+    <div class="list-block list-block-search searchbar-found">
+      <ul>
+        <li class="item-content">
+          <div class="item-inner">
+            <div class="item-title">Acura </div>
+          </div>
+        </li>
+        <li class="item-content">
+          <div class="item-inner">
+            <div class="item-title">Audi</div>
+          </div>
+        </li>
+        ...
+      </ul>
+    </div>
+  </div>
+</div>
+<div id="item_div">
+
+  <!--<div class="items" id="item1">-->
+  <!--  <img src="product1.jpg">-->
+  <!--  <input type="button" value="Add To CART" onclick="cart('item1')">-->
+  <!--  <p>Simple Navy Blue T-Shirt</p>-->
+  <!--  <p>Price - $95</p>-->
+  <!--  <input type="hidden" id="item1_name" value="Simple Navy Blue T-Shirt">-->
+  <!--  <input type="hidden" id="item1_price" value="$95">-->
+  <!--</div>-->
+
+  <!--<div class="items" id="item2">-->
+  <!--  <img src="product2.jpg">-->
+  <!--  <input type="button" value="Add To CART" onclick="cart('item2')">-->
+  <!--  <p>Trendy T-Shirt With Back Design</p>-->
+  <!--  <p>Price - $105</p>-->
+  <!--  <input type="hidden" id="item2_name" value="Trendy T-Shirt With Back Design">-->
+  <!--  <input type="hidden" id="item2_price" value="$105">-->
+  <!--</div>-->
+  
+  <!--<div class="items" id="item3">-->
+  <!--  <img src="product3.jpg">-->
+  <!--  <input type="button" value="Add To CART" onclick="cart('item3')">-->
+  <!--  <p>Two Color Half-Sleeves T-Shirt</p>-->
+  <!--  <p>Price - $120</p>-->
+  <!--  <input type="hidden" id="item3_name" value="Two Color Half-Sleeves T-Shirt">-->
+  <!--  <input type="hidden" id="item3_price" value="$120">-->
+  <!--</div>-->
+
+  <!--<div class="items" id="item4">-->
+  <!--  <img src="product4.jpg">-->
+  <!--  <input type="button" value="Add To CART" onclick="cart('item4')">-->
+  <!--  <p>Stylish Grey Chinos For Mens</p>-->
+  <!--  <p>Price - $140</p>-->
+  <!--  <input type="hidden" id="item4_name" value="Stylish Grey Chinos For Mens">-->
+  <!--  <input type="hidden" id="item4_price" value="$140">-->
+  <!--</div>-->
+
+  <!--<div class="items" id="item5">-->
+  <!--  <img src="product5.jpg">-->
+  <!--  <input type="button" value="Add To CART" onclick="cart('item5')">-->
+  <!--  <p>Comfortable Pants For Working</p>-->
+  <!--  <p>Price - $130</p>-->
+  <!--  <input type="hidden" id="item5_name" value="Comfortable Pants For Working">-->
+  <!--  <input type="hidden" id="item5_price" value="$130">-->
+  <!--</div>-->
+
+  <!--<div class="items" id="item6">-->
+  <!--  <img src="product6.jpg">-->
+  <!--  <input type="button" value="Add To CART" onclick="cart('item6')">-->
+  <!--  <p>Slim Track Pant For Jogging</p>-->
+  <!--  <p>Price - $90</p>-->
+  <!--  <input type="hidden" id="item6_name" value="Slim Track Pant For Jogging">-->
+  <!--  <input type="hidden" id="item6_price" value="$90">-->
+  <!--</div>-->
+
+</div>
+
+
+<script>
+    var mySearchbar = $$('.searchbar')[0].f7Searchbar;
+
+</script>
+<script src="//cdn.framework7.io/js/vendor/jquery-1.11.0.min.js"></script>
+<script src="//cdn.framework7.io/js/plugins.js"></script>
+<script src="//cdn.framework7.io/js/main.js"></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-74282934-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+  <script type="text/javascript" src="./js/cordova.js"></script>
+  <script type="text/javascript" src="./js/index.js"></script>
+  <script type="text/javascript">
+  
+  
+  
+    $(document).ready(function() {
+    
+          $.ajax({
+        type:'post',
+        url:'store_items.php',
+        data:{
+          total_cart_items:"totalitems"
+        },
+        success:function(response) {
+          document.getElementById("total_items").value=response;
+        }
+      });
+
+    });
+    
+    //Pulling green earth organics vegetables    
+    var veg = [];
+    
+    $.getJSON('js/greenEarth/Vegetables.json', function(data) {
+      $.each(data.names, function(i, f) {
+        var id= 'item'.concat(i);
+          //$(".products").append("<div class='product'><div id='name'>"+f.name+"</div><div id='prod_content'><div id='main_cont'><div id='desc'><b>Description </b> NA</div><div id='price'>"+f.price+"</div></div><div class='right'><div id='img'><img src='img/greenearthlogo.png' alt='Green Earth Organics Logo'></img></div><div id='add'><button class=' button-circle button-tiny ' onclick=cart(this.name, this.price)><i class= 'body1'>Add</i></button></div></div></div></div>")
+          $("#item_div").append("<div class='items' id='"+id+"'>"+
+            id+"<img src='"+f.picture+"'><input type='button' value='Add To CART' onclick='cart(id)'/><p>"+f.name+"</p><p>Price - "+f.price+"</p><input type='hidden' id='"+
+            id+"_name' value='"+f.name+"'><input type='hidden' id='"+id+"_price' value='"+
+            f.price+"'></div>")
+            
+          //("#item_div").append("<div class='items'><img src='"+f.picture+"'><input type='button' value='Add To CART'><p>"+f.name+"</p><p>Price - "+f.price+"</p></div>")
+     });
+
+    });
+    
+     function cart(id)
+    {
+	  var ele=document.getElementById(id);
+	  var img_src=ele.getElementsByTagName("img")[0].src;
+	  var name=document.getElementById(id+"_name").value;
+	  var price=document.getElementById(id+"_price").value;
+	
+	  $.ajax({
+        type:'post',
+        url:'store_items.php',
+        data:{
+          item_src:img_src,
+          item_name:name,
+          item_price:price
+        },
+        success:function(response) {
+          document.getElementById("total_items").value=response;
+        }
+      });
+	
+    }
+
+    function show_cart()
+    {
+      $.ajax({
+      type:'post',
+      url:'store_items.php',
+      data:{
+        showcart:"cart"
+      },
+      success:function(response) {
+        document.getElementById("mycart").innerHTML=response;
+        $("#mycart").slideToggle();
+      }
+     });
+
+    }
+function myFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+
+
+  </script>
+
+</body>
+</html>

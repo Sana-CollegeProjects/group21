@@ -6,6 +6,7 @@
      * -->
 <html>
     <head>
+        
         <style> 
 input[type=text] {
     width: 130px;
@@ -49,23 +50,31 @@ input[type=text]:focus {
             <button class="button" onclick=window.open("product_categories.html")><span> Search</span> </button>
    
         </div>
+        
         <div>
             <ul>
-                <li>List Area</li>
+                <textarea onfocus="this.value='My List:'setbg('#e5fff3');" rows="15" cols = "44"  name="text" id="text_id" class="form-control" style="resize:vertical" ></textarea>
+
+               
             </ul>
             
         </div>
         
     </div>
+    
 </section>
+
 <li class="list" ></li>
 
-<div class="editable" contenteditable="true">
+
+
     
-</div>
+
+    <!--Search Bar-->
 <form action="">
-  <input class="bottom" name="search_query" onkeyup="" maxlength="25" id="myInput" type="text" placeholder="Search.."></input>
+  <input keypress="()" name="search_query" onkeyup="" maxlength="25" id="myInput" type="text" placeholder="Search.."></input>
    </form>
+   
 <!--  <div class="col-lg-6">-->
 <!--    <div class="input-group">-->
 <!--      <input type="text" class="form-control" onkeyup="SearchFunction)" placeholder="Search for...">-->
@@ -78,11 +87,288 @@ input[type=text]:focus {
 <!--</form>-->
 
 <!--<gcse:searchbox-only resultsUrl="http://jsfiddle.net/devnook/2PC2f/6/show_html/"></gcse:searchbox-only> <!--http://jsfiddle.net/devnook/2PC2f/6/-->
+<!--<form role="form">-->
+<!--        <div class="form-group">-->
+<!--          <input type="email" class="form-control input-lg" id="search" placeholder="Sart type 'a' ....">-->
+<!--        </div>-->
+<!--</form>-->
+<!--<div class="jumbotron text-center">-->
+<!--<h1>About us</h1>-->
+<!--<div class="container" style="padding:50px 250px;">-->
+<!--    <form role="form">-->
+<!--        <div class="form-group">-->
+<!--          <input type="search" class="form-control input-lg" id="search" placeholder="Type your search character">-->
+<!--                        <table class="table table-striped table-bordered table-hover">-->
+<!--                            <thead>-->
+<!--                                <tr>-->
+<!--                                    <th>ID</th>-->
+<!--                                    <th>Name</th>-->
+<!--                                    <th>Email</th>-->
+<!--                                    <th>Phone</th>-->
+<!--                                    <th>City</th>-->
+<!--                                </tr>-->
+<!--                            </thead>-->
+<!--                            <tbody>-->
+<!--                            </tbody>-->
+<!--                        </table>-->
+<!--                    </div>-->
+<!--    </form>-->
+<!--</div>-->
+
+<!--Angular search bar-->
+<!--<label>Search: <input ng-model="searchText"></label>-->
+<!--<table id="searchTextResults">-->
+<!--  <tr><th>Name</th><th>Phone</th></tr>-->
+<!--  <tr ng-repeat="friend in friends | filter:searchText">-->
+<!--    <td>{{friend.name}}</td>-->
+<!--    <td>{{friend.phone}}</td>-->
+<!--  </tr>-->
+<!--</table>-->
+<!--<hr>-->
+<!--<label>Any: <input ng-model="search.$"></label> <br>-->
+<!--<label>Name only <input ng-model="search.name"></label><br>-->
+<!--<label>Phone only <input ng-model="search.phone"></label><br>-->
+<!--<label>Equality <input type="checkbox" ng-model="strict"></label><br>-->
+<!--<table id="searchObjResults">-->
+<!--  <tr><th>Name</th><th>Phone</th></tr>-->
+<!--  <tr ng-repeat="friendObj in friends | filter:search:strict">-->
+<!--    <td>{{friendObj.name}}</td>-->
+<!--    <td>{{friendObj.phone}}</td>-->
+<!--  </tr>-->
+<!--</table>-->
+
 </body>
-<script>
+
+<script type="text/javascript" src='//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js'>
+
+function setbg(color)
+{
+document.getElementById("styled").style.background=color
+}
+
+// $(document).ready(function(){
+
+//     showList();
+//     searchBar();
+   
+// });
+
+// function showList() {
+// 	 $("#show-records").click(function(){
+// 		$.getJSON("js/greenEarth/Vegetables.json", function(data){
+// 		    var json = data;
+// 		    $("show-list").append("<table class='specialists'>")
+// 		    for(var i = 0; i < json.length; i++) {
+// 			    var obj = json[i],
+// 			    	tableFormat = "</td><td>";
+				
+// 			    $("#show-list").append("<tr><td class=1>" + 
+// 			    	obj.FIELD1 + tableFormat + 
+// 			    	obj.FIELD2 + tableFormat + 
+// 			    	obj.FIELD3 + tableFormat + 
+// 			    	obj.FIELD4 + tableFormat + 
+// 			    	obj.FIELD5 + tableFormat + 
+// 			    	obj.FIELD6 + tableFormat + 
+// 			    	obj.FIELD7 + tableFormat + 
+// 			    	obj.FIELD8 + "</td></tr>");
+// 				$("show-list").append("</table>");
+// 			}
+// 			//end getJSON inner function
+// 		});
+// 		//end click function
+//     });
+// 	 //end showList()
+// };
+
+
+
+// function searchBar() {
+
+// 	//AJAX getJSON
+// 	$.getJSON("js/greenEarth/Vegetables.json", function(data){
+// 		//gathering json Data, sticking it into var json
+// 		var json = data;
+// 		for(var i = 0; i < json.length; i++) {
+// 			//putting the json objects into var obj
+// 			var obj = json[i];
+// 			function contains(text_one, text_two) {
+// 				if (text_one.indexOf(text_two) != -1)
+// 					return true;
+// 			}
+// 			//whenever anything is entered into search bar...
+// 			$('#search').keyup(function(obj) {
+// 				//grab the search bar content values and...
+// 				var searchEntry = $(this).val().toLowerCase();
+// 				//grab each td and check to see if it contains the same contents as var searchEntry - if they dont match, hide; otherwise show
+// 				$("td").each(function() {
+// 					if (!contains($(this).text().toLowerCase(), searchEntry)) {
+// 						$(this).hide(400);
+// 					} else {
+// 						$(this).show(400);
+// 					};
+//     			})
+//     		})
+// 		}
+// 	});
+// };
+
+// Angular script data
+// var expectFriendNames = function(expectedNames, key) {
+//   element.all(by.repeater(key + ' in friends').column(key + '.name')).then(function(arr) {
+//     arr.forEach(function(wd, i) {
+//       expect(wd.getText()).toMatch(expectedNames[i]);
+//     });
+//   });
+// };
+
+// it('should search across all fields when filtering with a string', function() {
+//   var searchText = element(by.model('searchText'));
+//   searchText.clear();
+//   searchText.sendKeys('m');
+//   expectFriendNames(['Mary', 'Mike', 'Adam'], 'friend');
+
+//   searchText.clear();
+//   searchText.sendKeys('76');
+//   expectFriendNames(['John', 'Julie'], 'friend');
+// });
+
+// it('should search in specific fields when filtering with a predicate object', function() {
+//   var searchAny = element(by.model('search.$'));
+//   searchAny.clear();
+//   searchAny.sendKeys('i');
+//   expectFriendNames(['Mary', 'Mike', 'Julie', 'Juliette'], 'friendObj');
+// });
+// it('should use a equal comparison when comparator is true', function() {
+//   var searchName = element(by.model('search.name'));
+//   var strict = element(by.model('strict'));
+//   searchName.clear();
+//   searchName.sendKeys('Julie');
+//   strict.click();
+//   expectFriendNames(['Julie'], 'friendObj');
+// });
+
+// $('#search').keyup(function() {//when key is pressed in search bar
+//  var searchTerm = $(this).val(); //val of search bar
+//  var myExp = new RegExp(searchTerm, "i"); //regular experation
+
+//  $.getJSON('js/greenEarth/Vegetables.json', function(data){//get the json file
+
+//   var output = "<ul id='result'>";
+//   $.each(data, function(key, val){
+//   if(val.name.search(myExp) != -1){//search for the data in the json file
+//     output += '<li>';
+//     output += '<h3>' +val.name+ '</h3>';
+//     output += '<img src="'+val.photo+'" style="height:100px;">';
+//     output += '</li>';
+//   }
+//   });//end each
+//   output += "</ul>";
+//   $('#update').html(output);//output result to the update div
+//  });
+// });
+
+
+// <![CDATA[
+//       $("#searchterm").keyup(function(e){
+//         var q = $("#searchterm").val();
+//         $.getJSON("js/greenEarth/Vegetables.json",
+//         {
+//           srsearch: q,
+//           action: "query",
+//           list: "search",
+//           format: "json"
+//         },
+//         function(data) {
+//           $("#results").empty();
+//           $("#results").append("
  
+// Results for <b>" + q + "</b>
  
-//   (function() {
+// ");
+//           $.each(data.query.search, function(i,item){
+//             $("#results").append("
+// <div><a href='http://en.wikipedia.org/wiki/" + encodeURIComponent(item.title) + "'>" + item.title + "</a>" + item.snippet + "</div>
+// ");
+//           });
+//         });
+//       });
+ 
+// ]]
+
+// $('#search').keydown(function(){
+// $.getJSON("js/greenEarth/Vegetables.json",function(data){
+// var search = $('#search').val();
+// var regex = new RegExp(search, 'i');
+// var output;
+// $.each(data, function(key, val){
+// if((val.id.search(regex) != -1 ) || (val.name.search(regex) != -1)){
+//     output += "<tr>";
+//     output += "<td id='"+key+"'>"+val.id+"</td>";
+//     output += "<td id='"+key+"'>"+val.name+"</td>";
+//     output += "<td id='"+key+"'>"+val.email+"</td>";
+//     output += "<td id='"+key+"'>"+val.phone+"</td>";
+//     output += "<td id='"+key+"'>"+val.city+"</td>";
+//     output += "</tr>";
+//   }
+// });
+// $('tbody').html(output);
+// });
+// })
+
+// $('#search').keyup(function(){
+//             var searchField = $('#search').val();
+//             var regex = new RegExp(searchField, "i");
+//             var output = '<div class="row">';
+//             var count = 1;
+//             $.getJSON('js', function(data) {
+//               $.each(data, function(key, val){
+//                 if ((val.name.search(regex) != -1) || (val.location.search(regex) != -1)) {
+//                   output += '<div class="col-md-6 well">';
+//                   output += '<div class="col-md-3"><img class="img-responsive" src="'+val.avatar+'" alt="'+ val.name +'" /></div>';
+//                   output += '<div class="col-md-7">';
+//                   output += '<h5>' + val.name + '</h5>';
+//                   output += '<p>' + val.location + '</p>'
+//                   output += '</div>';
+//                   output += '</div>';
+//                   if(count%2 == 0){
+//                     output += '</div><div class="row">'
+//                   }
+//                   count++;
+//                 }
+//               });
+//               output += '</div>';
+//               $('#results').html(output);
+//             }); 
+//         });
+//       });
+// $('.searchButton').on('click',function(){
+//   alert('You clicked search button');
+// });
+
+//  $("#myInput").keypress(function(e) {
+//     var veg = [];
+//     if(e.keyCode == 13) {
+//     $.getJSON('js/greenEarth/Vegetables.json', function(data) {
+//       $.each(data.names, function(i, f) {
+//           $(".products").append("<div class='product'><div id='name'>"+f.name+"</div><div id='prod_content'><div id='main_cont'><div id='desc'><b>Description </b> NA</div><div id='price'>"+f.price+"</div></div><div class='right'><div id='img'><img src='img/greenearthlogo.png' alt='Green Earth Organics Logo'></img></div><div id='add'><button class=' button-circle button-tiny ' onclick=cart(this.name, this.price)><i class= 'body1'>Add</i></button></div></div></div></div>")
+//      });
+//     });
+    
+//     //Pulling supervalu's vegetables
+//     $.getJSON('js/superValu/fruitVeg/SVsalad.json', function(data) {
+//       $.each(data.salad, function(i, f) {
+//           $(".products").append("<div class='product'><div id='name'>"+f.name+"</div><div id='prod_content'><div id='main_cont'><div id='desc'><b>Description </b> NA</div><div id='price'>"+f.price+"</div></div><div class='right'><div id='img'><img src='img/supervalulogo.png' alt='Green Earth Organics Logo'></img></div><div id='add'><button class=' button-circle button-tiny 'onclick=cart(this.name, this.price)><i class= 'body1'>Add tes</i></button></div></div></div></div>")
+//      });
+//     });
+//     $.getJSON('js/superValu/fruitVeg/SVpotatoes.json', function(data) {
+//       $.each(data.potatoes, function(i, f) {
+//           $(".products").append("<div class='product'><div id='name'>"+f.name+"</div><div id='prod_content'><div id='main_cont'><div id='desc'><b>Description </b> NA</div><div id='price'>"+f.price+"</div></div><div class='right'><div id='img'><img src='img/supervalulogo.png' alt='Green Earth Organics Logo'></img></div><div id='add'><button class=' button-circle button-tiny 'onclick=cart(this.name, this.price)><i class= 'body1'>Add</i></button></div></div></div></div>")
+//       });
+//     });
+//     }
+//     });
+ 
+//   (function b() {
 //     var cx = '017643444788069204610:4gvhea_mvga';
 //     var gcse = document.createElement('script');
 //     gcse.type = 'text/javascript';
@@ -93,7 +379,7 @@ input[type=text]:focus {
 //     s.parentNode.insertBefore(gcse, s);
 //   })();
   
-//   function _retrieveJsonData(retrieveDataCallback) {
+//   function retrieveJsonData(retrieveDataCallback) {
 //   if (!window.cachedTableData) {
 //     var conData = JSON.parse(tableau.connectionData);
 //     var jsonString = conData.jsonString;
@@ -122,7 +408,8 @@ input[type=text]:focus {
 //   }
 //   retrieveDataCallback(window.cachedTableData);
 // }
-// // https://community.tableau.com/thread/179254
+
+// https://community.tableau.com/thread/179254
 // $('#search').keydown(function(){
 // $.getJSON("js/greenEarthVeg.json",function(data){
 // var search = $('#search').val();
