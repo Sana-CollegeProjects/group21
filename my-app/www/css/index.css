@@ -149,7 +149,7 @@ body {
 .button {
     position: absolute;
     top: 125px;
-    left:21.5%;
+    left:150px;
     display: inline-block;
     margin: 0 auto;
     z-index:2;
@@ -326,7 +326,7 @@ body {
 }
 /*Minilogo*/
 .minilogo{
-    margin-left:35%;
+    margin-left:215px;
 }
 /*TextArea*/
 #text_id{
