@@ -25,7 +25,7 @@ if(isset($success_message)) echo $success_message;
     <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
    
    
-    <link rel="stylesheet" type="text/css" href="css/RegisterPage.css" />
+    <link rel="stylesheet" type="text/css" href="RegesterPage.css" />
     <title>Register</title>
 </head>
 
@@ -49,13 +49,13 @@ if(isset($success_message)) echo $success_message;
 
        <form class="input" action="register.php" method="post">
       <h1 class="h1"><b>Sign Up</b></h1>
-      </b></b><input style="height:30px; width: 200px; font-size:12pt; font-family: Helvetica Neue;" type="text" name="username" required="required" placeholder="Enter Username" required /><br>
+      </b></b><input style="height:30px; width: 200px; font-size:12pt; font-family: Helvetica Neue;" type="text" name="userName" required="required" placeholder="Enter Username" required /><br>
       <br>
-      </b></b><input style="height:30px; width: 200px; font-size:12pt; font-family:Helvetica Neue;" type="email" name="email" required="required" placeholder="Enter Email" required/><br>
+      </b></b><input style="height:30px; width: 200px; font-size:12pt; font-family:Helvetica Neue;" type="email" name="userEmail" required="required" placeholder="Enter Email" required/><br>
       <br>
-      </b></b><input style="height:30px; width: 200px; font-size:12pt; font-family:Helvetica Neue;" type="password" name="psswd" required="required" placeholder="Enter Password" required/><br>
+      </b></b><input style="height:30px; width: 200px; font-size:12pt; font-family:Helvetica Neue;" type="password" name="userPass" required="required" placeholder="Enter Password" required/><br>
       <br>
-      </b></b><input style="height:30px; width: 200px; font-size:12pt; font-family:Helvetica Neue; " type="password" name="psswd" required="required" placeholder="Comfirm Password" /><br>
+      </b></b><input style="height:30px; width: 200px; font-size:12pt; font-family:Helvetica Neue; " type="password" name="password" required="required" placeholder="Comfirm Password" /><br>
       <br>
       <input name="button-register" style="height:40px; width: 110px; font-size:13pt; color:black; font-family:Helvetica Neue; cursor: pointer; background-color: brown;"  type="submit" value="Register" />
 

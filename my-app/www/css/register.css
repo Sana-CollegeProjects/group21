@@ -56,7 +56,8 @@
 
 
 
-<?php
+
+/*<?php
    require_once('ConnectRegphp.php');
   if(isset($_POST) & !empty($_POST)){
       
@@ -78,4 +79,4 @@
        
 }
 
-?>
+?>*/
