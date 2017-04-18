@@ -18,12 +18,12 @@
  * index.css
  * author:Daniel Pasinski x15022790
  * date: 03/02/2017
- * Version: Beta
+ * Connected to SearchPage.html
  */
 * {
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
-
+/*Background Colour*/
 body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
@@ -72,15 +72,15 @@ body {
                                       /* offset horizontal: half of image width and text area width */
     }
 }
-
-h1 {
-    font-size:24px;
-    font-weight:normal;
-    margin:0px;
-    overflow:visible;
-    padding:0px;
-    text-align:center;
-}
+/*For old code*/
+/*h1 {*/
+/*    font-size:24px;*/
+/*    font-weight:normal;*/
+/*    margin:0px;*/
+/*    overflow:visible;*/
+/*    padding:0px;*/
+/*    text-align:center;*/
+/*}*/
 
 .event {
     border-radius:4px;

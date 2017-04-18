@@ -41,16 +41,20 @@ $result=mysql_query($sql);
 
 // Mysql_num_row is counting table row
 if($count==1){
-  // $row = mysql_fetch_assoc($result);
+// $row = mysql_fetch_assoc($result);
  //if (crypt($password, $row['password']) == $row['password']){
         session_register("userName");
         session_register("password"); 
         echo "Login Successful";
         return true;
+        header("location:my-app/www/SearchPage.html");
+        
     }
     else {
-        echo "Wrong Username or Password";
-        return false;
+        header("location:my-app/www/SearchPage.html");
+    
+        //echo "Wrong Username or Password";
+        //return false;
     
 }
 
