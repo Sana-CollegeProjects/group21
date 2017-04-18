@@ -152,6 +152,7 @@ body {
     left:21.5%;
     display: inline-block;
     margin: 0 auto;
+    z-index:2;
     
     -webkit-border-radius: 10px;
     
@@ -323,19 +324,18 @@ body {
 #myUL li a:hover:not(.header) {
   background-color: #eee;
 }
-ul{
-    
-    
-}
+
 /*TextArea*/
 #text_id{
     position:fixed;
     width: 90%;
+    height:50%;
     margin-top: 25%;
     clear:both;
     margin-right: auto;
     left:5%;
-   
+    bottom:5%;
+    z-index:1;
     
 }
 /*vegetables1.json*/
