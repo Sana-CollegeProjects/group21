@@ -52,7 +52,7 @@ if($count==1){
     }
     else {
         //not reading from database so hard coding to redirect to searchPage.html
-        header("location:my-app/www/SearchPage.html");
+        header("location:/my-app/www/SearchPage.html");
     
         //echo "Wrong Username or Password";
         //return false;

@@ -1,5 +1,5 @@
 <?php
-require ('reg2.php');
+require('reg2.php');
 $connection = mysqli_connect('127.0.0.1', 'root', '', 'USER_DB');
    if(!$conection){
        die("Unsuccessfully to Connect to Database" . mysqli_error($conection));

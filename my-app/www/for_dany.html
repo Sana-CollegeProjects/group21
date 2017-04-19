@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html><head>
+  
+  <meta charset="UTF-8">
+  <meta name="description" content="Free Web tutorials">
+  <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+  <meta name="author" content="John Doe">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <link rel="stylesheet" type="text/css" href="./css/prodSample.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!--script src="./js/jquery.min.js"></script-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    
+    <title>Vegetables</title>
+
+</head>
+
+<body>
+    <div class="body">
+        <div class="wrapper">
+            <div class="products">
+            </div>
+        </div>
+    </div>
+
+    
+    <script type="text/javascript" src="./js/cordova.js"></script>
+    <script type="text/javascript" src="./js/index.js"></script>
+
+<script type="text/javascript">
+
+  function pullJSON(){
+    var veg = [];
+    $.getJSON('js/greenEarth/Vegetables.json', function(data) {
+      $.each(data.names, function(i, f) {
+          $(".products").append("<div class='product'><div id='name'>"+f.name+"</div><div id='prod_content'><div id='main_cont'><div id='desc'><b>Description </b> NA</div><div id='price'>"+f.price+"</div></div><div class='right'><div id='img'><img src='img/greenearthlogo.png' alt='Green Earth Organics Logo'></img></div><div id='add'><button class=' button-circle button-tiny ' onclick=cart(this.name, this.price)><i class= 'body1'>Add</i></button></div></div></div></div>")
+     });
+    });
+    
+    //Pulling supervalu's vegetables
+    $.getJSON('js/superValu/fruitVeg/SVsalad.json', function(data) {
+      $.each(data.salad, function(i, f) {
+          $(".products").append("<div class='product'><div id='name'>"+f.name+"</div><div id='prod_content'><div id='main_cont'><div id='desc'><b>Description </b> NA</div><div id='price'>"+f.price+"</div></div><div class='right'><div id='img'><img src='img/supervalulogo.png' alt='Green Earth Organics Logo'></img></div><div id='add'><button class=' button-circle button-tiny 'onclick=cart(this.name, this.price)><i class= 'body1'>Add tes</i></button></div></div></div></div>")
+     });
+    });
+    $.getJSON('js/superValu/fruitVeg/SVpotatoes.json', function(data) {
+      $.each(data.potatoes, function(i, f) {
+          $(".products").append("<div class='product'><div id='name'>"+f.name+"</div><div id='prod_content'><div id='main_cont'><div id='desc'><b>Description </b> NA</div><div id='price'>"+f.price+"</div></div><div class='right'><div id='img'><img src='img/supervalulogo.png' alt='Green Earth Organics Logo'></img></div><div id='add'><button class=' button-circle button-tiny 'onclick=cart(this.name, this.price)><i class= 'body1'>Add</i></button></div></div></div></div>")
+      });
+    });
+    }
+</script>
+
+</body>
+</html>

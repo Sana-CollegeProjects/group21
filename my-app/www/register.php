@@ -32,11 +32,12 @@ echo "Connected to Database<br />";
     
     if($result){
     echo 'You have successfully registered';
-            }
+    header("location:/my-app/www/SearchPage.html");        }
     else{
         echo 'Unable to register';
        
 }
+
 
 ob_flush();
 ?>

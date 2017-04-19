@@ -1,8 +1,8 @@
 
 
   .register{
-        background-color: silver;
-        background-repeat: no-repeat;
+        background-color: #ff0066;
+        
         width: 100%;
         height:100%;
         }
@@ -10,10 +10,11 @@
  
 
  .child img{
+ 
  display: block;
  margin: 0 auto;
-  margin-left: auto;
-	width:90px;
+ margin-left: auto;
+ width:90px;
   height: 90px;
   margin-top:20px;
   margin-bottom: 30px;
@@ -21,11 +22,18 @@
 }
 
 .child{
- background-color: yellow; 
- width: 400px;
- height: 550px;
+background-color: #cccccc;
+position: absolute;  
+width: 300px;  
+height: 500px;   
+left: 50%;   
+margin:0 auto;  
+margin-top:10px; 
+
+ /*width: 80%;
+ height: 90%;
  margin-top: 30px;
- margin-left: 10px; 
+ margin-left: 10px; */
  
 }
 
@@ -41,9 +49,26 @@
     left: 110px;
     margin: 0 auto;  
 } 
-
+form{
+    display: block;
+ margin: 0 auto;
+ margin-left: auto;
+   /* position: absolute;*/
+}
 .input{
     text-align: center;
+    height:30px; 
+    width: 200px; 
+    font-size:12pt; 
+}
+#loginBtn{
+    height:40px; 
+    width: 110px; 
+    font-size:13pt; 
+    color:black; 
+    font-family:Helvetica Neue; 
+    cursor: pointer; 
+    background-color: gray;
 }
 
 .ul li{
@@ -53,7 +78,9 @@
 .regGuestBtn{
  cursor: pointer;
 }
-
+p{
+    text-align: center;
+}
 
 
 

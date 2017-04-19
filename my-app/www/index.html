@@ -1,39 +1,51 @@
-<html DOCTYPE!>
+<!DOCTYPE html>
 <html>
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="msapplication-tap-highlight" content="no" />
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
-    
-    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+  <meta charset="UTF-8">
+  <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
    
-   
-    <link rel="stylesheet" type="text/css" href="my-app/www/css/register.css" />
-    <title>Register</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css.map">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css.map">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css.map">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css.map">
+    <link rel="stylesheet" type="text/css" href="css/register.css" />
+  <title>Login</title>
+
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+
 </head>
 
     <body>
          
     
      <div class="register" >
-      <div style=" background-color: gray; position: absolute;   width: 400px;  height: 500px;   left: 35%;   margin: 0 auto;  margin-top:10px;" class="child">
-       <img src="my-app/www/img/Shapping.png" >
+      <div class="child">
+       <img src="img/Shapping.png" >
        <form action="check_user-pass.php" class="input" method="POST" >
       <h1 class="h1"><b>Login</b></h1>
-      </b></b><input style="height:30px; width: 200px; font-size:12pt; font-family: Helvetica Neue;" type="text" name="userName" required="required" placeholder="Enter Username" required /><br>
+      </b></b><input type="text" name="userName" required="required" placeholder="Enter Username" required /><br>
       <br><br>
-      </b></b><input style="height:30px; width: 200px; font-size:12pt; font-family:Helvetica Neue;" type="password" name="password" required="required" placeholder="Enter Password" required/><br>
+      </b></b><input  type="password" name="password" required="required" placeholder="Enter Password" required/><br>
       <br><br>
-      <input style="height:40px; width: 110px; font-size:13pt; color:black; font-family:Helvetica Neue; cursor: pointer; background-color: gray;"  type="submit" value="Login"/>
-      </form>
-      <form class="input">
-    <p style="text-align:center;"> Don't have an account </p><br/>
-    <input class="regGuestBtn" onclick="location.href ='reg2Pg.php';"  type="submit" value="Register" /> or 
-    <a href="SearchPage.html">Use as Guest</a></p>
+      <input id="loginBtn" type="submit" value="Login"/>
+      
+    <p> Don't have an account </p><br/>
+    <input class="regGuestBtn" onclick="location.href ='reg2.php';"  type="button" value="Register" /> or 
+    <input class="regGuestBtn" onclick="location.href ='product_categories.html';"  type="button" value="Use as Guest" /></p>
       </form></div>
 </div>
-   
+ <script type="text/javascript">
+  $(document).ready(function() {
+ $.ajax({
+        type:'post',
+        url:'https://shapping.000webhostapp.com/check_user-pass.php',
+        
+      });
+});
+    </script>   
 
 </body>
+

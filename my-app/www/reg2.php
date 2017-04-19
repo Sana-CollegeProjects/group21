@@ -22,7 +22,10 @@
     
     <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
    
-   
+   <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css.map">
+       <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css.map">
+           <link rel="stylesheet" type="text/css" href="css/bootstrap.css.map">
+               <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css.map">
     <link rel="stylesheet" type="text/css" href="css/register.css" />
     <title>Register</title>
     
@@ -36,7 +39,7 @@
 
     <div class="register">
       
-      <div style=" background-color: brown; position: absolute;   width: 400px;  height: 500px;   left: 35%;   margin: 0 auto;  margin-top:10px; " class="child">
+      <div class="child">
        <img src="img/Shapping.png" >
        
        <form class="input" action="register.php" method="post">
