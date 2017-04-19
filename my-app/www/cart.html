@@ -92,7 +92,7 @@
     //Updates shopping cart number of items
           $.ajax({
         type:'post',
-        url:'store_items.php',
+        url:'https://shapping-app-dany753.c9users.io/my-app/www/store_items.php',
         data:{
           total_cart_items:"totalitems"
         },
@@ -116,7 +116,18 @@
           "></img></div><div id='add'><input type='button' class=' button-circle button-tiny ' value='Add' onclick='cart(&#39;"+id+"&#39;)' /></div></div></div><input type='hidden' id='"+id+"_name' value='"+
           f.name+"' /><input type='hidden' id='"+id+"_price' value='"+f.price+"'/>");
      });
-
+    });
+    //Pulling supervalu vegetables
+    $.getJSON('js/superValu/fruitVeg/SVpotatoes.json', function(data) {
+      $.each(data.potatoes, function(i, f) {
+        var id= 'item'.concat(i);
+          $("#item_div").append("<div class='product'id='"+id+
+          "'><div id='name'>"+f.name+"</div><div id='prod_content'><div id='main_cont'><div id='desc'><img src='"+
+          f.image+"'></img></div><div id='price'>"+
+          f.price+"</div></div><div class='right'><div id='img_logo'><img src='img/supervalulogo.png' alt='SuperValu Logo'"+
+          "></img></div><div id='add'><input type='button' class=' button-circle button-tiny ' value='Add' onclick='cart(&#39;"+id+"&#39;)' /></div></div></div><input type='hidden' id='"+id+"_name' value='"+
+          f.name+"' /><input type='hidden' id='"+id+"_price' value='"+f.price+"'/>");
+    });
     });
     //<input type='button' class=' button-circle button-tiny ' value='Add' onclick='cart(&#39;"+id+"&#39;)' />
     
@@ -130,7 +141,7 @@
 	
 	  $.ajax({
         type:'post',
-        url:'store_items.php',
+        url:'https://shapping-app-dany753.c9users.io/my-app/www/store_items.php',
         data:{
           item_src:img_src,
           item_name:name,
@@ -148,7 +159,7 @@
     {
       $.ajax({
       type:'post',
-      url:'store_items.php',
+      url:'https://shapping-app-dany753.c9users.io/my-app/www/store_items.php',
       data:{
         showcart:"cart"
       },
