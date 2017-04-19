@@ -1,3 +1,4 @@
+<!--All code below sourced from: "Simple Add To Cart System Using Jquery,Ajax And PHP On Talkerscode.Com". Talkerscode.com. N.p., 2017. Web. 9 Mar. 2017.>
 <?php
   session_start();
 
